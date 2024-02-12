@@ -1,0 +1,140 @@
+[gd_scene load_steps=15 format=3 uid="uid://d3yyx8kaqjhpm"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ai0s8"]
+[ext_resource type="PackedScene" uid="uid://pjee1i4rstls" path="res://computer.tscn" id="1_t1xpq"]
+[ext_resource type="Script" path="res://DayLabel.gd" id="3_ai6f5"]
+[ext_resource type="Script" path="res://EarningLabel.gd" id="3_l0yvy"]
+[ext_resource type="PackedScene" uid="uid://sgcnbojli0do" path="res://arts/table.glb" id="3_q2djf"]
+[ext_resource type="Script" path="res://CalendarMonthLabel.gd" id="4_ukpe6"]
+[ext_resource type="Script" path="res://EventList.gd" id="5_cy2li"]
+[ext_resource type="Script" path="res://ProgressBar.gd" id="5_d734a"]
+[ext_resource type="Script" path="res://CalendarYearLabel.gd" id="5_tjpqo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5be1h"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sc4xv"]
+albedo_color = Color(0.862745, 0.513726, 0.376471, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ij7d"]
+material = SubResource("StandardMaterial3D_sc4xv")
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="Theme" id="Theme_jpbjk"]
+default_font_size = 24
+
+[sub_resource type="Theme" id="Theme_fb7so"]
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_ai0s8")
+seconds = null
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="Scene" type="Node" parent="."]
+
+[node name="Computer" parent="Scene" instance=ExtResource("1_t1xpq")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, -0.0818356, 0.259594, 1.15379)
+
+[node name="Ground" type="StaticBody3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08165e-12, -0.25, 2.08165e-12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scene/Ground"]
+shape = SubResource("BoxShape3D_5be1h")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Scene/Ground/CollisionShape3D"]
+mesh = SubResource("BoxMesh_4ij7d")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="Scene"]
+transform = Transform3D(0.708463, -0.503401, 0.494639, -2.76037e-08, 0.700872, 0.713287, -0.705748, -0.505338, 0.496542, 4.63356, 5.64261, 4.7608)
+fov = 31.7
+near = 0.021
+far = 48.33
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene"]
+transform = Transform3D(0.85598, 0.274388, 0.438189, -0.512056, 0.332889, 0.791823, 0.0713989, -0.902162, 0.425448, 4.62831, 8.75489, 4.74823)
+shadow_enabled = true
+
+[node name="table" parent="Scene" instance=ExtResource("3_q2djf")]
+transform = Transform3D(-4.37114e-08, 3.48787e-16, 1, 3.48787e-16, 1, -3.48787e-16, -1, 3.48787e-16, -4.37114e-08, 2.08165e-12, -0.2, 1.16481)
+
+[node name="UserInterface" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+theme = SubResource("Theme_jpbjk")
+
+[node name="CalendarMonthLabel" type="Label" parent="UserInterface"]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 164.0
+offset_bottom = 66.0
+text = "Month 01"
+script = ExtResource("4_ukpe6")
+
+[node name="CalendarYearLabel" type="Label" parent="UserInterface"]
+offset_left = 308.0
+offset_top = 32.0
+offset_right = 440.0
+offset_bottom = 66.0
+text = "Year 1"
+horizontal_alignment = 2
+script = ExtResource("5_tjpqo")
+
+[node name="EarningLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 198.0
+offset_bottom = 174.0
+text = "Earning: EUR 0"
+script = ExtResource("3_l0yvy")
+
+[node name="EventLabel" type="Label" parent="UserInterface"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 400.0
+offset_right = 198.0
+offset_bottom = 434.0
+text = "Events"
+
+[node name="EventList" type="Label" parent="UserInterface/EventLabel"]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 166.0
+offset_bottom = 67.0
+text = "-
+"
+script = ExtResource("5_cy2li")
+
+[node name="ProgressBar" type="ProgressBar" parent="UserInterface"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 89.0
+offset_right = 442.0
+offset_bottom = 120.0
+theme = SubResource("Theme_fb7so")
+value = 1.0
+show_percentage = false
+script = ExtResource("5_d734a")
+
+[node name="DayLabel" type="Label" parent="UserInterface/ProgressBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -195.0
+offset_top = -17.0
+offset_right = 195.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 1"
+horizontal_alignment = 1
+script = ExtResource("3_ai6f5")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://pjee1i4rstls"]
+
+[ext_resource type="PackedScene" uid="uid://bvrgwon75rqw2" path="res://arts/computer.glb" id="1_0qvqu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a3oyq"]
+
+[node name="Computer" type="Node3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="computer" parent="Pivot" instance=ExtResource("1_0qvqu")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_a3oyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]

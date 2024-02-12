@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmk3b3rglyv4k"]
+
+[ext_resource type="PackedScene" uid="uid://sgcnbojli0do" path="res://arts/table.glb" id="1_e7dsj"]
+
+[node name="Table" type="Node3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="table" parent="Pivot" instance=ExtResource("1_e7dsj")]
