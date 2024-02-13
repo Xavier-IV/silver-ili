@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgf54jl4hbbuv"]
+
+[ext_resource type="PackedScene" uid="uid://cwwjndt4wmpbd" path="res://arts/wall.glb" id="1_x5of2"]
+
+[node name="Wall" type="Node3D"]
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="wall" parent="." instance=ExtResource("1_x5of2")]

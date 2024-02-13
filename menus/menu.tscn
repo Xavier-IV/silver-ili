@@ -1,0 +1,177 @@
+[gd_scene load_steps=13 format=3 uid="uid://dtcyv2sxhklx3"]
+
+[ext_resource type="Script" path="res://menus/menu.gd" id="1_md87q"]
+[ext_resource type="Script" path="res://menus/calendar_month_label.gd" id="2_6flc8"]
+[ext_resource type="Script" path="res://menus/calendar_year_label.gd" id="3_t8vuf"]
+[ext_resource type="Script" path="res://menus/earning_label.gd" id="4_xdwcb"]
+[ext_resource type="Script" path="res://menus/salary_label.gd" id="5_qhs55"]
+[ext_resource type="Script" path="res://menus/event_list.gd" id="6_nkdjw"]
+[ext_resource type="Script" path="res://menus/progress_bar.gd" id="7_ks7f6"]
+[ext_resource type="Script" path="res://menus/calendar_day_label.gd" id="8_2g70j"]
+[ext_resource type="Script" path="res://menus/job_listings.gd" id="9_x4nr5"]
+
+[sub_resource type="Theme" id="Theme_16vng"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho4pj"]
+bg_color = Color(0.643137, 0.372549, 0.803922, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpqmc"]
+bg_color = Color(0, 0, 0, 0.878431)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md87q")
+
+[node name="Home" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 511.0
+offset_bottom = 653.0
+
+[node name="CalendarMonthLabel" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 164.0
+offset_bottom = 66.0
+text = "Month 01"
+script = ExtResource("2_6flc8")
+
+[node name="CalendarYearLabel" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 32.0
+offset_right = 440.0
+offset_bottom = 66.0
+text = "Year 1"
+horizontal_alignment = 2
+script = ExtResource("3_t8vuf")
+
+[node name="EarningLabel" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 198.0
+offset_bottom = 174.0
+text = "Balance: RM 0"
+script = ExtResource("4_xdwcb")
+
+[node name="SalaryLabel" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 173.0
+offset_right = 203.0
+offset_bottom = 207.0
+theme_override_colors/font_color = Color(0.352941, 0.992157, 0, 1)
+text = "Salary: RM 0"
+script = ExtResource("5_qhs55")
+
+[node name="EventLabel" type="Label" parent="Home"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 400.0
+offset_right = 198.0
+offset_bottom = 434.0
+text = "Events"
+
+[node name="EventList" type="Label" parent="Home/EventLabel"]
+layout_mode = 0
+offset_top = 33.0
+offset_right = 166.0
+offset_bottom = 67.0
+text = "-
+"
+script = ExtResource("6_nkdjw")
+
+[node name="ProgressBar" type="ProgressBar" parent="Home"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 89.0
+offset_right = 442.0
+offset_bottom = 120.0
+theme = SubResource("Theme_16vng")
+value = 1.0
+show_percentage = false
+script = ExtResource("7_ks7f6")
+
+[node name="CalendarDayLabel" type="Label" parent="Home/ProgressBar"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -21.5
+offset_right = 21.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Day 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("8_2g70j")
+
+[node name="Button" type="Button" parent="Home"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 235.0
+offset_right = 204.0
+offset_bottom = 290.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_ho4pj")
+text = "Find Job"
+
+[node name="FindJob" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 517.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="FindJob"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="FindJob/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tpqmc")
+
+[node name="MarginContainer" type="MarginContainer" parent="FindJob/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FindJob/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="JobListings" type="VBoxContainer" parent="FindJob/MarginContainer/Panel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("9_x4nr5")
+
+[connection signal="button_down" from="Home/Button" to="." method="_on_button_button_down"]

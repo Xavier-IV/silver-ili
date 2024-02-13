@@ -14,3 +14,10 @@ config/name="silver_ili"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GlobalSignal="*res://globals/global_signal.gd"
+GlobalVar="*res://globals/global_var.gd"
+GlobalDateTime="*res://globals/global_date_time.gd"
+GlobalCashflow="*res://globals/global_cashflow.gd"
