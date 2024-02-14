@@ -14,10 +14,10 @@ var current = {
 	"hour": 0,
 }
 var gameTimeCycles = {
-	"monthMax": 4,
-	"dayMax": 4,
-	"hourMax": 4,
-	"salaryDay": 2,
+	"monthMax": 12,
+	"dayMax": 30,
+	"hourMax": 24,
+	"salaryDay": 28,
 }
 
 

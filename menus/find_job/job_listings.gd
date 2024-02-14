@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-var job_item = load("res://menus/job_item.tscn")
+var job_item = load("res://menus/find_job/job_item.tscn")
 
 
 # Called when the node enters the scene tree for the first time.

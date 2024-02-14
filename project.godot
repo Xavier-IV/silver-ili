@@ -24,4 +24,4 @@ GlobalCashflow="*res://globals/global_cashflow.gd"
 
 [display]
 
-window/stretch/mode="canvas_items"
+window/dynamic_fonts/use_oversampling=true

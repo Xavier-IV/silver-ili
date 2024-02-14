@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dtcyv2sxhklx3"]
+[gd_scene load_steps=18 format=3 uid="uid://dtcyv2sxhklx3"]
 
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_md87q"]
 [ext_resource type="Script" path="res://menus/calendar_month_label.gd" id="2_6flc8"]
@@ -9,9 +9,8 @@
 [ext_resource type="Script" path="res://menus/event_list.gd" id="6_nkdjw"]
 [ext_resource type="Script" path="res://menus/progress_bar.gd" id="7_ks7f6"]
 [ext_resource type="Script" path="res://menus/calendar_day_label.gd" id="8_2g70j"]
-[ext_resource type="Script" path="res://menus/find_job_button.gd" id="9_3sgs2"]
-[ext_resource type="Script" path="res://menus/job_listings.gd" id="9_x4nr5"]
-[ext_resource type="Script" path="res://menus/find_job_container.gd" id="10_w3ljy"]
+[ext_resource type="Script" path="res://menus/find_job/find_job_button.gd" id="10_iirfd"]
+[ext_resource type="PackedScene" uid="uid://c7fp32demm52g" path="res://menus/find_job/find_job.tscn" id="11_uviox"]
 
 [sub_resource type="Animation" id="Animation_ud87y"]
 resource_name = "animate_salary"
@@ -83,13 +82,6 @@ _data = {
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho4pj"]
 bg_color = Color(0.643137, 0.372549, 0.803922, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpqmc"]
-bg_color = Color(0, 0, 0, 0.878431)
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
 
 [node name="UserInterface" type="Control"]
 layout_mode = 3
@@ -202,54 +194,9 @@ offset_right = 204.0
 offset_bottom = 290.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_ho4pj")
 text = "Find Job"
-script = ExtResource("9_3sgs2")
+script = ExtResource("10_iirfd")
 
-[node name="FindJob" type="Control" parent="."]
+[node name="FindJob" parent="." instance=ExtResource("11_uviox")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 517.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("10_w3ljy")
-
-[node name="MarginContainer" type="MarginContainer" parent="FindJob"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="Panel" type="Panel" parent="FindJob/MarginContainer"]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_tpqmc")
-
-[node name="MarginContainer" type="MarginContainer" parent="FindJob/MarginContainer/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 20
-theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
-theme_override_constants/margin_bottom = 20
-
-[node name="ScrollContainer" type="ScrollContainer" parent="FindJob/MarginContainer/Panel/MarginContainer"]
-layout_mode = 2
-horizontal_scroll_mode = 0
-
-[node name="JobListings" type="VBoxContainer" parent="FindJob/MarginContainer/Panel/MarginContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-script = ExtResource("9_x4nr5")
 
 [connection signal="button_down" from="Home/Button" to="." method="_on_button_button_down"]

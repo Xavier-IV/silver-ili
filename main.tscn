@@ -1,10 +1,25 @@
-[gd_scene load_steps=10 format=3 uid="uid://d3yyx8kaqjhpm"]
+[gd_scene load_steps=12 format=3 uid="uid://d3yyx8kaqjhpm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ai0s8"]
-[ext_resource type="PackedScene" uid="uid://pjee1i4rstls" path="res://computer.tscn" id="1_t1xpq"]
+[ext_resource type="PackedScene" uid="uid://pjee1i4rstls" path="res://scenes/computer.tscn" id="1_t1xpq"]
 [ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://menus/menu.tscn" id="2_hbkae"]
 [ext_resource type="PackedScene" uid="uid://sgcnbojli0do" path="res://arts/table.glb" id="3_q2djf"]
-[ext_resource type="PackedScene" uid="uid://bgf54jl4hbbuv" path="res://wall.tscn" id="4_p0hhf"]
+[ext_resource type="PackedScene" uid="uid://bgf54jl4hbbuv" path="res://scenes/wall.tscn" id="4_p0hhf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f62b3"]
+bg_color = Color(0.188235, 0.188235, 0.188235, 0.905882)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.462745, 0.462745, 0.462745, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_e2wn7"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_f62b3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5be1h"]
 size = Vector3(3, 0.1, 3)
@@ -30,6 +45,7 @@ adjustment_enabled = true
 script = ExtResource("1_ai0s8")
 
 [node name="UserInterface" parent="." instance=ExtResource("2_hbkae")]
+theme = SubResource("Theme_e2wn7")
 
 [node name="Timer" type="Timer" parent="."]
 autostart = true

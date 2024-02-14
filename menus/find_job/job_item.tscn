@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1ofhoer4ufcw"]
 
-[ext_resource type="Script" path="res://menus/job_item.gd" id="1_fb2eg"]
+[ext_resource type="Script" path="res://menus/find_job/job_item.gd" id="1_hf3bk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdbts"]
 content_margin_left = 8.0
@@ -17,7 +17,7 @@ theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
-script = ExtResource("1_fb2eg")
+script = ExtResource("1_hf3bk")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
