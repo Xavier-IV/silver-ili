@@ -1,7 +1,4 @@
-extends Node
-
-var salary = 0
-var balance = 0
+extends Control
 
 
 func _ready():
@@ -9,4 +6,4 @@ func _ready():
 
 
 func _on_apply_job(job):
-	salary = job.salary
+	visible = false

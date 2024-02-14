@@ -21,3 +21,7 @@ GlobalSignal="*res://globals/global_signal.gd"
 GlobalVar="*res://globals/global_var.gd"
 GlobalDateTime="*res://globals/global_date_time.gd"
 GlobalCashflow="*res://globals/global_cashflow.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"

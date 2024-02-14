@@ -26,7 +26,6 @@ func hour_percentage():
 
 
 func calendar_update():
-	print(current)
 	current["hour"] += 1
 	emit_signal("sig_hour_advanced")
 
@@ -58,8 +57,6 @@ func calendar_update():
 
 
 func handle_salary_day():
-	if (
-		GlobalDateTime.current["day"] == GlobalDateTime.gameTimeCycles["salaryDay"]
-		&& GlobalDateTime.current["hour"] == GlobalDateTime.gameTimeCycles["hourMax"]
-	):
+	print("handling salary day")
+	if GlobalDateTime.current["day"] == GlobalDateTime.gameTimeCycles["salaryDay"]:
 		emit_signal("sig_salary_day")

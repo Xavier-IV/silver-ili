@@ -37,6 +37,13 @@ layout_mode = 2
 theme_override_styles/normal = SubResource("StyleBoxFlat_rdbts")
 text = "Apply Job"
 
+[node name="Salary" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_7k3dh")
+theme_override_colors/font_color = Color(0.454902, 0.607843, 0.501961, 1)
+theme_override_font_sizes/font_size = 18
+text = "RM 1500"
+
 [node name="Description" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_7k3dh")

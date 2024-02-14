@@ -1,10 +1,10 @@
 extends Label
 
 
-func _update_income(value):
-	print("Running in label")
+func _ready():
+	GlobalSignal.connect("sig_salary_received", _on_sig_salary_received)
 
-	if value < 1000:
-		text = "Balance: RM %.2f" % (value / 100)
-	elif value >= 1000:
-		text = "Balance: RM %s" % (value / 100)
+
+func _on_sig_salary_received():
+	print("Updating, cashflow balance: %s" % GlobalCashflow.balance)
+	text = "Balance: RM %s" % GlobalCashflow.balance

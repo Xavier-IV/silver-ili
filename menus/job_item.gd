@@ -1,15 +1,16 @@
 extends MarginContainer
 
-var job_title: String = ""
+var _job = {}
 
 
 # Called when the node enters the scene tree for the first time.
-func set_detail(title, description):
-	job_title = title
-	$VBoxContainer/HBoxContainer/Title.text = title
-	$VBoxContainer/Description.text = description
+func set_detail(job):
+	_job = job
+	$VBoxContainer/HBoxContainer/Title.text = job["name"]
+	$VBoxContainer/Description.text = job["description"]
+	$VBoxContainer/Salary.text = "RM %s" % job["salary"]
 
 
 func _on_button_pressed():
-	print("User applying job!")
-	GlobalSignal.emit_signal("sig_apply_job", job_title)
+	GlobalVar.current_job = _job
+	GlobalSignal.emit_signal("sig_apply_job", _job)

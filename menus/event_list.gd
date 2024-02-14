@@ -1,24 +1,16 @@
 extends Label
 
-var events = []
+var events = {}
 
-func _extend_event():
-	events.map(func(e):
-		e['duration_since'] += 1
-		return e
-	)
 
-func _clear_since(duration):
-	events = events.filter(func(e):
-		return e['duration_since'] <= duration || !e['dismissable']
-	)
-	print('Clearing events...')
-	text = "\n".join(events.map(func(e):
-		return e['text']
-	))
+func _ready():
+	print("Event is ready...")
+	GlobalSignal.connect("sig_notify", _on_sig_notify)
 
-func _prepend_event(event, dismissable = false):
-	events.insert(0, {"text": event, "duration_since": 0, "dismissable": dismissable})
-	text = "\n".join(events.map(func(e):
-		return e['text']
-	))
+
+func _on_sig_notify(notification: GlobalSignal.Notification):
+	events[notification.id] = notification
+
+	var event_arr = events.values()
+	event_arr.sort_custom(func(a, b): return a.id < b.id)
+	text = "\n".join(event_arr.map(func(e): return e.text))

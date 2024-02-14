@@ -103,10 +103,11 @@ near = 0.021
 far = 48.33
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene"]
-transform = Transform3D(0.779222, -0.207839, 0.591284, -0.512056, 0.332889, 0.791823, -0.361403, -0.919776, 0.152969, 0.889561, 2.22008, 0.489411)
+transform = Transform3D(0.898055, -0.387493, -0.208196, 0.250768, 0.0621322, 0.966051, -0.361403, -0.919776, 0.152969, 0.889561, 2.22008, 0.489411)
 shadow_enabled = true
 shadow_opacity = 0.22
 shadow_blur = 0.3
+sky_mode = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_0b5uh")
