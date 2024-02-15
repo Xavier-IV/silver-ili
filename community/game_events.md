@@ -6,7 +6,7 @@ This list of events will be used to affect the gameplay experience, and to share
 
 Would be great to provide descriptive name, or if necessary with some description as well.
 
-If this is your first time contributing to open source, read the `CONTRIBUTING.md` first.
+If this is your first time contributing to open source, read the `CONTRIBUTING.md` first. I have no idea yet where to compile all this events, maybe a proper config/json file would make sense. But for now, make do with this first.
 
 ## Event suggestions
 
