@@ -9,3 +9,14 @@ Start your career with programming, whether you're a fresh graduate, career chan
 This game is in very early development, expect major breaking changes from time to time.
 
 If you'd like to contribute, please contact me first. Take a look at the CONTRIBUTING.md as well.
+
+### Running the Godot Project
+
+To run the Godot project and contribute to the game, follow these steps:
+
+1. Install Godot Engine on your computer.
+2. Clone the repo.
+3. Open Godot Engine and select "Import" to import the project.
+4. Build and run the project.
+
+Happy contributing!
