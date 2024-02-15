@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cyk1fh4jmfcad"]
+
+[ext_resource type="PackedScene" uid="uid://bx7pr0c6180d6" path="res://arts/mini_room_set.glb" id="1_03a37"]
+
+[node name="MiniRoom" type="Node3D"]
+
+[node name="Assets" parent="." instance=ExtResource("1_03a37")]

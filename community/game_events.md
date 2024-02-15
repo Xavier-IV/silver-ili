@@ -13,3 +13,4 @@ If this is your first time contributing to open source, read the `CONTRIBUTING.m
 - Database production went down
 - Burnout
 - DDoS
+- You've been ghosted by recruiter

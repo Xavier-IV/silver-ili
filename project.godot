@@ -24,4 +24,6 @@ GlobalCashflow="*res://globals/global_cashflow.gd"
 
 [display]
 
+window/size/viewport_width=1280
+window/size/viewport_height=720
 window/dynamic_fonts/use_oversampling=true
