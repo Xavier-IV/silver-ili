@@ -6,6 +6,8 @@ This list of events will be used to affect the gameplay experience, and to share
 
 Would be great to provide descriptive name, or if necessary with some description as well.
 
+If this is your first time contributing to open source, read the `CONTRIBUTING.md` first.
+
 ## Event suggestions
 
 - Database production went down
