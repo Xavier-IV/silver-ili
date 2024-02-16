@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dtcyv2sxhklx3"]
+[gd_scene load_steps=20 format=3 uid="uid://dtcyv2sxhklx3"]
 
 [ext_resource type="Theme" uid="uid://ddk547gkpyr0u" path="res://theme.tres" id="1_b6tx8"]
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_md87q"]
@@ -39,6 +39,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector2(32, 140)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../EarningLabel:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_ohk72"]
 resource_name = "animate_balance"
@@ -72,10 +84,37 @@ tracks/0/keys = {
 "values": [Vector2(32, 173), Vector2(32, 154.69), Vector2(32, 173)]
 }
 
+[sub_resource type="Animation" id="Animation_q5xb6"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../EarningLabel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(4.92458, 0.267943, 0.466517),
+"update": 0,
+"values": [Vector2(32, 140), Vector2(32, 124.6), Vector2(32, 140)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../EarningLabel:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.184314, 0.392157, 1), Color(1, 0.184314, 0.392157, 1), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_b1gwl"]
 _data = {
 "RESET": SubResource("Animation_w2anp"),
 "animate_balance": SubResource("Animation_ohk72"),
+"animate_balance_deducted": SubResource("Animation_q5xb6"),
 "animate_salary": SubResource("Animation_ud87y")
 }
 
@@ -108,6 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_b6tx8")
 
 [node name="CalendarMonthLabel" type="Label" parent="Home"]
 layout_mode = 0
@@ -115,7 +155,9 @@ offset_left = 32.0
 offset_top = 32.0
 offset_right = 164.0
 offset_bottom = 66.0
+theme = ExtResource("1_b6tx8")
 text = "Month 01"
+vertical_alignment = 1
 script = ExtResource("2_6flc8")
 
 [node name="CalendarYearLabel" type="Label" parent="Home"]
@@ -126,6 +168,7 @@ offset_right = 440.0
 offset_bottom = 66.0
 text = "Year 1"
 horizontal_alignment = 2
+vertical_alignment = 1
 script = ExtResource("3_t8vuf")
 
 [node name="EarningLabel" type="Label" parent="Home"]
@@ -134,7 +177,9 @@ offset_left = 32.0
 offset_top = 140.0
 offset_right = 295.0
 offset_bottom = 194.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Balance: RM 0"
+vertical_alignment = 1
 script = ExtResource("4_xdwcb")
 
 [node name="SalaryLabel" type="Label" parent="Home"]
@@ -145,6 +190,7 @@ offset_right = 262.0
 offset_bottom = 227.0
 theme_override_colors/font_color = Color(0.352941, 0.992157, 0, 1)
 text = "Salary: RM 0"
+vertical_alignment = 1
 script = ExtResource("5_qhs55")
 
 [node name="EventLabel" type="Label" parent="Home"]
@@ -193,9 +239,11 @@ script = ExtResource("8_2g70j")
 [node name="Button" type="Button" parent="Home"]
 layout_mode = 0
 offset_left = 33.0
-offset_top = 283.0
+offset_top = 291.0
 offset_right = 204.0
-offset_bottom = 338.0
+offset_bottom = 346.0
+theme = ExtResource("1_b6tx8")
+theme_type_variation = &"FlatButton"
 theme_override_styles/normal = SubResource("StyleBoxFlat_ho4pj")
 text = "Find Job"
 script = ExtResource("10_iirfd")
