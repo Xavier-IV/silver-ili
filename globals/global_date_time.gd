@@ -10,7 +10,7 @@ signal sig_salary_day
 var current = {
 	"year": 1,
 	"month": 1,
-	"day": 1,
+	"day": 27,
 	"hour": 0,
 }
 var gameTimeCycles = {
@@ -19,6 +19,10 @@ var gameTimeCycles = {
 	"hourMax": 24,
 	"salaryDay": 28,
 }
+
+
+func get_day():
+	return current["day"]
 
 
 func hour_percentage():
