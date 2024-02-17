@@ -16,14 +16,17 @@ func _ready():
 func _on_day_advanced():
 	var current_balance = balance
 	for expense in expenses.values():
-		if GlobalDateTime.get_day() != expense.chargeDay:
+		if (
+			GlobalDateTime.get_day()
+			!= min(expense.chargeDay, GlobalDateTime.gameTimeCycles["dayMax"])
+		):
 			continue
 
+		print("Paying expense")
 		balance -= expense.amount
 		var _notification = GlobalSignal.Notification.new()
 		_notification.text = "You paid RM %s for %s" % [expense.amount, expense.name]
 		_notification.duration = 1.0
-		_notification.id = randi_range(0, 10)
 
 		GlobalSignal.emit_signal("sig_notify", _notification)
 

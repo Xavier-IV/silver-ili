@@ -2,6 +2,16 @@ extends Node
 
 var current_job = {}
 
+var employment_detail = {
+	"job_id": 0,
+	"job_name": "",
+	"job_description": "",
+	"job_salary": 0,
+	"job_start_date": "",
+	"job_end_date": "",
+	"job_status": "Pending"
+}
+
 var jobs = {
 	"1":
 	{

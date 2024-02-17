@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d3yyx8kaqjhpm"]
+[gd_scene load_steps=8 format=3 uid="uid://d3yyx8kaqjhpm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ai0s8"]
 [ext_resource type="PackedScene" uid="uid://dmk3b3rglyv4k" path="res://scenes/table.tscn" id="2_15cvc"]
 [ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://menus/menu.tscn" id="2_hbkae"]
+[ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_8edta"]
 [ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="5_icaoi"]
-[ext_resource type="PackedScene" uid="uid://bfgjj73r2dtnd" path="res://scenes/mini_room_set.tscn" id="5_jkjuf"]
+[ext_resource type="PackedScene" uid="uid://lhtpgiqmhctm" path="res://scenes/global_plane.tscn" id="5_sxims"]
 
 [sub_resource type="Environment" id="Environment_xpl73"]
 ssr_enabled = true
@@ -37,20 +38,36 @@ near = 0.021
 far = 48.33
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene"]
-transform = Transform3D(0.798649, -0.181697, 0.573712, -0.520086, 0.271241, 0.809901, -0.302771, -0.945206, 0.122128, 20.2239, 2.22008, 0.489411)
+transform = Transform3D(0.792644, 0.506498, 0.339375, -0.520086, 0.271241, 0.809901, 0.31816, -0.818467, 0.47842, 11.5789, 12.0222, 10.8298)
 shadow_enabled = true
 shadow_opacity = 0.22
 shadow_blur = 0.3
 sky_mode = 1
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Scene"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0980787, 5.1176, 8.48411)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285941, 5.1176, 0.279754)
 light_color = Color(0.87451, 0.870588, 0.831373, 1)
 light_energy = 10.0
 light_specular = 0.0
 omni_range = 15.1856
 
-[node name="MiniRoomSet" parent="Scene" instance=ExtResource("5_jkjuf")]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81634, 2.16009, -0.177265)
+light_color = Color(0.87451, 0.870588, 0.831373, 1)
+light_energy = 10.0
+light_specular = 0.0
+omni_range = 15.1856
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147378, 3.11083, 5.98713)
+light_color = Color(0.87451, 0.870588, 0.831373, 1)
+light_energy = 10.0
+light_specular = 0.0
+omni_range = 15.1856
+
+[node name="MiniRoom" parent="Scene" instance=ExtResource("4_8edta")]
+
+[node name="GlobalPlane" parent="Scene" instance=ExtResource("5_sxims")]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_xpl73")

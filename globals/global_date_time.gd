@@ -10,14 +10,14 @@ signal sig_salary_day
 var current = {
 	"year": 1,
 	"month": 1,
-	"day": 27,
+	"day": 1,
 	"hour": 0,
 }
 var gameTimeCycles = {
 	"monthMax": 12,
-	"dayMax": 30,
-	"hourMax": 24,
-	"salaryDay": 28,
+	"dayMax": 7,
+	"hourMax": 4,
+	"salaryDay": 5,
 }
 
 
@@ -61,6 +61,9 @@ func calendar_update():
 
 
 func handle_salary_day():
-	print("handling salary day")
-	if GlobalDateTime.current["day"] == GlobalDateTime.gameTimeCycles["salaryDay"]:
+	if (
+		GlobalDateTime.current["day"]
+		== min(gameTimeCycles["dayMax"] - 1, GlobalDateTime.gameTimeCycles["salaryDay"])
+	):
+		print("handling salary day")
 		emit_signal("sig_salary_day")

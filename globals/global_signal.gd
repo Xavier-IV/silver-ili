@@ -2,7 +2,6 @@ extends Node
 
 
 class Notification:
-	var id: int
 	var text: String
 	var duration: float
 	var createdAt: float = Time.get_unix_time_from_system()

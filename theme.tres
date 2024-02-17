@@ -1,7 +1,6 @@
-[gd_resource type="Theme" load_steps=10 format=3 uid="uid://ddk547gkpyr0u"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://ddk547gkpyr0u"]
 
 [ext_resource type="FontFile" uid="uid://cewua36i7y8g2" path="res://fonts/Montserrat-Regular.ttf" id="1_pmorp"]
-[ext_resource type="FontFile" uid="uid://sj1tmdt10hpa" path="res://fonts/Montserrat-VariableFont_wght.ttf" id="2_r6uod"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nm6nr"]
 content_margin_left = 4.0
@@ -125,17 +124,17 @@ ButtonCTA/constants/h_separation = 0
 ButtonCTA/constants/icon_max_width = 0
 ButtonCTA/constants/outline_size = 0
 ButtonCTA/font_sizes/font_size = 16
-ButtonCTA/fonts/font = ExtResource("2_r6uod")
+ButtonCTA/fonts/font = null
 ButtonCTA/styles/disabled = SubResource("StyleBoxFlat_jl3u4")
 ButtonCTA/styles/focus = SubResource("StyleBoxFlat_jl3u4")
 ButtonCTA/styles/hover = SubResource("StyleBoxFlat_jl3u4")
 ButtonCTA/styles/normal = SubResource("StyleBoxFlat_jl3u4")
 ButtonCTA/styles/pressed = SubResource("StyleBoxFlat_jl3u4")
 Label/colors/font_color = Color(1, 1, 1, 1)
-Label/colors/font_outline_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0.129412, 0.129412, 0.129412, 1)
 Label/colors/font_shadow_color = Color(0, 0, 0, 0)
 Label/constants/line_spacing = 3
-Label/constants/outline_size = 0
+Label/constants/outline_size = 3
 Label/constants/shadow_offset_x = 1
 Label/constants/shadow_offset_y = 1
 Label/constants/shadow_outline_size = 1

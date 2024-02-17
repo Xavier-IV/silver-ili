@@ -9,8 +9,8 @@ func _ready():
 
 
 func _on_sig_notify(noti: GlobalSignal.Notification):
-	events[noti.id] = noti
+	events[noti.createdAt] = noti
 
 	var event_arr = events.values()
-	event_arr.sort_custom(func(a, b): return a.createdAt - b.createdAt)
+	event_arr.sort_custom(func(a, b): return a.createdAt - b.createdAt > 0)
 	text = "\n".join(event_arr.map(func(e): return e.text))

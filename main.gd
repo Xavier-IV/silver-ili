@@ -21,8 +21,6 @@ func _on_salary_day():
 	var _notification = GlobalSignal.Notification.new()
 	_notification.text = "Payday! Time to splurge~"
 	_notification.duration = 1.0
-	_notification.id = notification_id
-	notification_id += 1
 
 	GlobalSignal.emit_signal("sig_notify", _notification)
 	GlobalSignal.emit_signal("sig_salary_received")
@@ -34,6 +32,7 @@ func _on_apply_job(job):
 	_notification.text = "Congratulations! New job applied with '%s'" % job.name
 	_notification.text += "\nSalary: RM %s" % job.salary
 	_notification.duration = 1.0
-	_notification.id = randi_range(0, 10)
 
 	GlobalSignal.emit_signal("sig_notify", _notification)
+
+	print(GlobalVar.employment_detail)
