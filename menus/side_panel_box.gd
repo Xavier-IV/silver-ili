@@ -12,5 +12,4 @@ func _process(delta):
 
 
 func _on_close_button_pressed():
-	print("close button pressed")
 	visible = false

@@ -15,8 +15,8 @@ func _on_button_pressed():
 	GlobalVar.current_job = _job
 
 	GlobalVar.employment_detail["job_id"] = _job.id
-	GlobalVar.employment_detail["job_name"] = _job.name
-	GlobalVar.employment_detail["job_salary"] = _job.salary
-	GlobalVar.employment_detail["job_start_date"] = Time.get_datetime_string_from_system()
+	GlobalVar.employment_detail["employer_name"] = _job.name
+	GlobalVar.employment_detail["salary"] = _job.salary
+	GlobalVar.employment_detail["start_date"] = Time.get_datetime_string_from_system()
 
 	GlobalSignal.emit_signal("sig_apply_job", _job)

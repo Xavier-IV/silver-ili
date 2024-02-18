@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_year_advanced():
-	text = "Year %s" % GlobalDateTime.current["year"]
+	text = "Y%s" % GlobalDateTime.current["year"]

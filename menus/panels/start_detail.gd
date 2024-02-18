@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_apply_job(job):
-	text = "Started Since: %s" % GlobalVar.employment_detail["job_start_date"]
+	text = "Started Since: %s" % GlobalVar.employment_detail["start_date"]

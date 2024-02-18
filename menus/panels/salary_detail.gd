@@ -7,4 +7,4 @@ func _ready():
 
 
 func _on_apply_job(job):
-	text = "Current Salary: RM %s" % GlobalVar.employment_detail["job_salary"]
+	text = "Current Salary: RM %s" % GlobalVar.employment_detail["salary"]

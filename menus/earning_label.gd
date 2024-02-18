@@ -7,13 +7,8 @@ func _ready():
 
 
 func _on_balance_deducted():
-	print("Updating, cashflow balance: %s" % GlobalCashflow.balance)
 	text = "Balance: RM %s" % GlobalCashflow.balance
-	# update the balance label
-	# text = "Balance: RM %s" % GlobalCashflow.balance
-	# print("Updating, cashflow balance: %s" % GlobalCashflow.balance
 
 
 func _on_sig_salary_received():
-	print("Updating, cashflow balance: %s" % GlobalCashflow.balance)
 	text = "Balance: RM %s" % GlobalCashflow.balance

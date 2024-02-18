@@ -4,12 +4,15 @@ var current_job = {}
 
 var employment_detail = {
 	"job_id": 0,
-	"job_name": "",
-	"job_description": "",
-	"job_salary": 0,
-	"job_start_date": "",
-	"job_end_date": "",
-	"job_status": "Pending"
+	"employer_name": "",
+	"description": "",
+	"role": "",
+	"salary": 0,
+	"start_date": "",
+	"end_date": "",
+	"status": "Pending",
+	"working_days": [1, 2, 3, 4, 5],
+	"working_hours": [9, 18],
 }
 
 var jobs = {
@@ -42,3 +45,7 @@ var jobs = {
 		"salary": 2000
 	},
 }
+
+
+func employed():
+	return current_job != {}

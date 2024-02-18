@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://dtcyv2sxhklx3"]
+[gd_scene load_steps=37 format=3 uid="uid://dtcyv2sxhklx3"]
 
 [ext_resource type="Theme" uid="uid://ddk547gkpyr0u" path="res://theme.tres" id="1_b6tx8"]
 [ext_resource type="Script" path="res://menus/menu.gd" id="1_md87q"]
@@ -7,13 +7,18 @@
 [ext_resource type="Script" path="res://menus/calendar_year_label.gd" id="3_t8vuf"]
 [ext_resource type="Script" path="res://menus/earning_label.gd" id="4_xdwcb"]
 [ext_resource type="Script" path="res://menus/salary_label.gd" id="5_qhs55"]
+[ext_resource type="Script" path="res://menus/calendar_time_label.gd" id="6_afi1d"]
 [ext_resource type="Script" path="res://menus/event_list.gd" id="6_nkdjw"]
 [ext_resource type="Script" path="res://menus/progress_bar.gd" id="7_ks7f6"]
 [ext_resource type="Script" path="res://menus/calendar_day_label.gd" id="8_2g70j"]
+[ext_resource type="Script" path="res://menus/stats_group.gd" id="9_bt1h8"]
 [ext_resource type="Script" path="res://menus/find_job/find_job_button.gd" id="10_iirfd"]
 [ext_resource type="PackedScene" uid="uid://c7fp32demm52g" path="res://menus/find_job/find_job.tscn" id="11_uviox"]
+[ext_resource type="Script" path="res://menus/overdue_label.gd" id="13_e378a"]
 [ext_resource type="PackedScene" uid="uid://bxqro37ri431x" path="res://menus/panels/career_panel.tscn" id="13_f3rn0"]
+[ext_resource type="PackedScene" uid="uid://m52aiefccuha" path="res://scenes/StatBar.tscn" id="13_xk3dk"]
 [ext_resource type="Script" path="res://menus/panels/career_panel.gd" id="14_1k23j"]
+[ext_resource type="Script" path="res://menus/stat_list.gd" id="16_6uk8p"]
 
 [sub_resource type="Animation" id="Animation_w2anp"]
 length = 0.001
@@ -123,9 +128,39 @@ _data = {
 "new_animation": SubResource("Animation_25ghi")
 }
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kskh"]
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ennqc"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cic2i"]
+
 [sub_resource type="Theme" id="Theme_16vng"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hic35"]
+bg_color = Color(0.129412, 0.176471, 0.0980392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.243137, 0.4, 0.341176, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7eil"]
+bg_color = Color(0.388235, 0.686275, 0.337255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l87ag"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28e2y"]
 
@@ -184,17 +219,37 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_horizontal = 3
 theme = ExtResource("1_b6tx8")
-text = "Month 01"
+text = "01/01"
 vertical_alignment = 1
 script = ExtResource("2_6flc8")
 
 [node name="CalendarYearLabel" type="Label" parent="PrimeContainer/MainControl/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Year 1"
-horizontal_alignment = 2
+text = "Y1"
 vertical_alignment = 1
 script = ExtResource("3_t8vuf")
+
+[node name="VSeparator2" type="VSeparator" parent="PrimeContainer/MainControl/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0kskh")
+
+[node name="CalendarTimeLabel" type="Label" parent="PrimeContainer/MainControl/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "08:00"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("6_afi1d")
+
+[node name="CalendarDayLabel2" type="Label" parent="PrimeContainer/MainControl/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mon"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("8_2g70j")
 
 [node name="HSeparator4" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 10)
@@ -204,34 +259,72 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
 [node name="PanelContainer" type="PanelContainer" parent="PrimeContainer/MainControl/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 40)
 layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cic2i")
 
 [node name="ProgressBar" type="ProgressBar" parent="PrimeContainer/MainControl/VBoxContainer/PanelContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 theme = SubResource("Theme_16vng")
-value = 1.0
+theme_override_styles/background = SubResource("StyleBoxFlat_hic35")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q7eil")
+value = 50.0
 show_percentage = false
 script = ExtResource("7_ks7f6")
 
-[node name="CalendarDayLabel" type="Label" parent="PrimeContainer/MainControl/VBoxContainer/PanelContainer/ProgressBar"]
-layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -21.5
-offset_right = 21.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Day 1"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("8_2g70j")
-
-[node name="HSeparator" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 50)
+[node name="HSeparator5" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
+
+[node name="OtherStats" type="PanelContainer" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l87ag")
+
+[node name="StatsGroup" type="HBoxContainer" parent="PrimeContainer/MainControl/VBoxContainer/OtherStats"]
+layout_mode = 2
+script = ExtResource("9_bt1h8")
+
+[node name="MentalStat" parent="PrimeContainer/MainControl/VBoxContainer/OtherStats/StatsGroup" instance=ExtResource("13_xk3dk")]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 5.0
+progress_stat_name = "mental_health"
+progress_label_text = ""
+progress_label_color = Color(0.12549, 0.513726, 0.796078, 1)
+progress_bar_color = Color(0.12549, 0.513726, 0.796078, 1)
+
+[node name="VSeparator" type="VSeparator" parent="PrimeContainer/MainControl/VBoxContainer/OtherStats/StatsGroup"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0kskh")
+
+[node name="CreativityStat2" parent="PrimeContainer/MainControl/VBoxContainer/OtherStats/StatsGroup" instance=ExtResource("13_xk3dk")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+progress_stat_name = "creativity_health"
+progress_label_text = ""
+progress_label_color = Color(0.819608, 0.133333, 0.74902, 1)
+progress_bar_color = Color(0.819608, 0.133333, 0.74902, 1)
+
+[node name="SocialStat" parent="PrimeContainer/MainControl/VBoxContainer/OtherStats/StatsGroup" instance=ExtResource("13_xk3dk")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+progress_stat_name = "social_health"
+progress_label_text = ""
+progress_label_color = Color(0.603922, 0.815686, 0.337255, 1)
+progress_bar_color = Color(0.603922, 0.815686, 0.337255, 1)
+
+[node name="HSeparator" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
+
+[node name="StatList" type="RichTextLabel" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+script = ExtResource("16_6uk8p")
 
 [node name="Control" type="Control" parent="PrimeContainer/MainControl/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 40)
@@ -243,6 +336,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 438.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -259,6 +354,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 438.0
+offset_bottom = 40.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 1
@@ -267,8 +364,25 @@ text = "Salary: RM 0"
 vertical_alignment = 1
 script = ExtResource("5_qhs55")
 
+[node name="Control3" type="Control" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="OverdueLabel" type="Label" parent="PrimeContainer/MainControl/VBoxContainer/Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.360784, 0.403922, 1)
+text = "Overdue:"
+vertical_alignment = 1
+script = ExtResource("13_e378a")
+
 [node name="HSeparator2" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 50)
+custom_minimum_size = Vector2(2.08165e-12, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_28e2y")
 
@@ -289,7 +403,7 @@ text = "Find Job"
 script = ExtResource("10_iirfd")
 
 [node name="HSeparator3" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
-custom_minimum_size = Vector2(2.08165e-12, 50)
+custom_minimum_size = Vector2(2.08165e-12, 10)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxEmpty_wg1q2")
 
@@ -300,11 +414,11 @@ text = "Events"
 [node name="Container" type="Container" parent="PrimeContainer/MainControl/VBoxContainer"]
 layout_mode = 2
 
-[node name="EventList" type="Label" parent="PrimeContainer/MainControl/VBoxContainer"]
+[node name="EventList" type="RichTextLabel" parent="PrimeContainer/MainControl/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-text = "This is a placeholder text"
-autowrap_mode = 3
+size_flags_stretch_ratio = 3.0
+bbcode_enabled = true
 script = ExtResource("6_nkdjw")
 
 [node name="SideControl" type="PanelContainer" parent="PrimeContainer"]

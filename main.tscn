@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3yyx8kaqjhpm"]
+[gd_scene load_steps=9 format=3 uid="uid://d3yyx8kaqjhpm"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_ai0s8"]
 [ext_resource type="PackedScene" uid="uid://dmk3b3rglyv4k" path="res://scenes/table.tscn" id="2_15cvc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_8edta"]
 [ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="5_icaoi"]
 [ext_resource type="PackedScene" uid="uid://lhtpgiqmhctm" path="res://scenes/global_plane.tscn" id="5_sxims"]
+[ext_resource type="AudioStream" uid="uid://d2f4xltpubfac" path="res://audios/Stream Loops - 2023-11-29.ogg" id="7_ycym3"]
 
 [sub_resource type="Environment" id="Environment_xpl73"]
 ssr_enabled = true
@@ -18,6 +19,7 @@ glow_enabled = true
 script = ExtResource("1_ai0s8")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="Scene" type="Node" parent="."]
@@ -33,6 +35,7 @@ transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Scene"]
 transform = Transform3D(0.541048, -0.599869, 0.589428, -6.06784e-08, 0.700872, 0.713287, -0.840992, -0.385922, 0.379205, 12.2314, 20.0683, 10.9252)
+current = true
 fov = 31.7
 near = 0.021
 far = 48.33
@@ -75,5 +78,10 @@ environment = SubResource("Environment_xpl73")
 [node name="UserInterface" parent="." instance=ExtResource("2_hbkae")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_ycym3")
+volume_db = -13.0
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

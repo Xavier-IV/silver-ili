@@ -21,6 +21,8 @@ GlobalSignal="*res://globals/global_signal.gd"
 GlobalVar="*res://globals/global_var.gd"
 GlobalDateTime="*res://globals/global_date_time.gd"
 GlobalCashflow="*res://globals/global_cashflow.gd"
+GlobalStat="*res://globals/global_stat.gd"
+GlobalJob="*res://globals/global_job.gd"
 
 [display]
 
