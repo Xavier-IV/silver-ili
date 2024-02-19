@@ -7,3 +7,7 @@ func _ready():
 
 func _on_apply_job(_job):
 	visible = false
+
+
+func _on_close_button_pressed():
+	visible = false

@@ -24,9 +24,11 @@ GlobalDateTime="*res://globals/global_date_time.gd"
 GlobalCashflow="*res://globals/global_cashflow.gd"
 GlobalStat="*res://globals/global_stat.gd"
 GlobalJob="*res://globals/global_job.gd"
+GlobalModal="*res://globals/global_modal.gd"
 
 [display]
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/stretch/mode="canvas_items"
 window/dynamic_fonts/use_oversampling=true

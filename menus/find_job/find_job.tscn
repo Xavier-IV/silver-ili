@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7fp32demm52g"]
+[gd_scene load_steps=5 format=3 uid="uid://c7fp32demm52g"]
 
 [ext_resource type="Script" path="res://menus/find_job/find_job_container.gd" id="1_dp7du"]
 [ext_resource type="Script" path="res://menus/find_job/job_listings.gd" id="2_wtygm"]
@@ -9,6 +9,12 @@ corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fiddm"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
 
 [node name="FindJob" type="Control"]
 layout_mode = 3
@@ -47,12 +53,38 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer"]
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "My Career"
+
+[node name="CloseButton" type="Button" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fiddm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fiddm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_fiddm")
+theme_override_styles/focus = SubResource("StyleBoxFlat_fiddm")
+text = "Close"
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 horizontal_scroll_mode = 0
 
-[node name="JobListings" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/ScrollContainer"]
+[node name="JobListings" type="VBoxContainer" parent="MarginContainer2/Panel/MarginContainer/VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 script = ExtResource("2_wtygm")
+
+[connection signal="pressed" from="MarginContainer2/Panel/MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

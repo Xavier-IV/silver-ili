@@ -7,6 +7,10 @@ signal sig_year_advanced
 
 signal sig_salary_day
 
+signal sig_pause_updated
+
+var paused = false
+
 var current = {
 	"year": 1,
 	"month": 1,
@@ -53,6 +57,20 @@ func get_hour():
 
 func hour_percentage():
 	return float(current["hour"]) / float(gameTimeCycles["hourMax"]) * 100.0
+
+
+func is_paused():
+	return paused
+
+
+func set_paused(pause):
+	paused = pause
+	emit_signal("sig_pause_updated")
+
+	if pause:
+		GlobalSignal.emit_signal("sig_show_global_event", "Game Paused")
+	else:
+		GlobalSignal.emit_signal("sig_hide_global_event")
 
 
 func calendar_update():

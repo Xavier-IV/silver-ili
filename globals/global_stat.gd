@@ -63,7 +63,6 @@ func begin_stat():
 
 
 func conclude_stat():
-	print("conclude harvesting stat")
 	process_stat("mental_health")
 	process_stat("social_health")
 	process_stat("creativity_health")

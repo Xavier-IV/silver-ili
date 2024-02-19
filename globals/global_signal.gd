@@ -7,6 +7,9 @@ class Notification:
 	var createdAt: float = Time.get_unix_time_from_system()
 
 
+signal sig_show_global_event(event: String)
+signal sig_hide_global_event
+
 signal sig_apply_job(job)
 signal sig_salary_received
 
