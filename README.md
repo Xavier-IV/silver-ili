@@ -1,6 +1,6 @@
 # Software Dev - An RPG Game
 
-<img width="752" alt="Screenshot 2024-02-19 at 01 59 05" src="https://github.com/Xavier-IV/softwaredev-rpg/assets/14009259/d0586e11-6f48-44e5-b72a-46a18945fb7d">
+<img width="752" alt="Screenshot 2024-02-19 at 22 29 49" src="https://github.com/Xavier-IV/softwaredev-rpg/assets/14009259/a39df5a5-bec5-4327-838f-daf64da3579a">
 
 Game roadmap: https://trello.com/b/a78AylEf/softwaredevgameboard
 
