@@ -29,6 +29,11 @@ var stat_ratio = {
 }
 
 
+func _ready():
+	# GlobalSave.load()
+	pass
+
+
 func get_mental_health():
 	return stats["mental_health"]
 

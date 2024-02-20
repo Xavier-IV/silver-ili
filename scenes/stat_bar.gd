@@ -6,7 +6,7 @@ extends Control
 @export var progress_label_color: Color
 
 @export var progress_bar_color: Color
-@export var progress_bar_radius: int = 15
+@export var progress_bar_radius: int = 0
 @export var progress_value: float = 100
 
 

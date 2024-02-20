@@ -2,6 +2,7 @@ extends AnimationPlayer
 
 
 func _ready():
+	play("RESET")
 	GlobalSignal.connect("sig_apply_job", _on_apply_job)
 	GlobalSignal.connect("sig_salary_received", _on_sig_salary_received)
 	GlobalCashflow.connect("sig_balance_deducted", _on_balance_deducted)

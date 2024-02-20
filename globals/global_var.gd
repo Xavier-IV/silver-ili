@@ -1,5 +1,11 @@
 extends Node
 
+
+func _ready():
+	# GlobalSave.load()
+	pass
+
+
 var current_job = {}
 
 var employment_detail = {

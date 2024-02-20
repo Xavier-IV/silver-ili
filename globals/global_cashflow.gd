@@ -11,6 +11,7 @@ var overdue = {}
 
 
 func _ready():
+	# GlobalSave.load()
 	GlobalSignal.connect("sig_apply_job", _on_apply_job)
 	GlobalDateTime.connect("sig_day_advanced", _on_day_advanced)
 	GlobalDateTime.connect("sig_hour_advanced", _on_hour_advanced)

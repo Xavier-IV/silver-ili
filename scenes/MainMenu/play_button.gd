@@ -1,0 +1,16 @@
+extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	if not FileAccess.file_exists("user://savegame.save"):
+		return  # Error! We don't have a save to load.
+
+	text = "Continue"
+
+
+func _pressed():
+	print("Button pressed")
+	GlobalSave.load()
+	# GlobalDateTime.set_paused(false)
+	get_tree().change_scene_to_file("res://scenes/Game/game_scene.tscn")

@@ -7,7 +7,6 @@ signal sig_close_modal(title: String)
 
 
 func init_modal(parent, title, description, buttons, callbacks):
-	print("initiating")
 	var modal_instance = modal.instantiate()
 	parent.add_child(modal_instance)
 

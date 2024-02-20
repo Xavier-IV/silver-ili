@@ -9,7 +9,7 @@ func _ready():
 	style.set_bg_color(parent.progress_bar_color)
 	add_theme_stylebox_override("fill", style)
 
-	value = parent.progress_value
+	value = GlobalStat.stats[parent.progress_stat_name]
 	GlobalStat.connect("sig_stats_changed", _on_stats_changed)
 
 

@@ -1,0 +1,87 @@
+[gd_scene load_steps=9 format=3 uid="uid://w11w5237gwag"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_qsenr"]
+[ext_resource type="PackedScene" uid="uid://dmk3b3rglyv4k" path="res://scenes/table.tscn" id="2_w2vkb"]
+[ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="3_5xmrd"]
+[ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_88i73"]
+[ext_resource type="PackedScene" uid="uid://lhtpgiqmhctm" path="res://scenes/global_plane.tscn" id="5_jv1nq"]
+[ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://menus/menu.tscn" id="6_3t78r"]
+[ext_resource type="AudioStream" uid="uid://d2f4xltpubfac" path="res://audios/Stream Loops - 2023-11-29.ogg" id="7_32plp"]
+
+[sub_resource type="Environment" id="Environment_xpl73"]
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+glow_enabled = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_qsenr")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[node name="Scene" type="Node" parent="."]
+
+[node name="Desk Sets" type="Node3D" parent="Scene"]
+transform = Transform3D(-1.75283e-07, 1.39864e-15, 4.01, 1.39864e-15, 4.01, -1.39864e-15, -4.01, 1.39864e-15, -1.75283e-07, -2.82797, 2.40677, 0.269529)
+
+[node name="table" parent="Scene/Desk Sets" instance=ExtResource("2_w2vkb")]
+transform = Transform3D(0.999999, 3.44777e-23, 2.33222e-15, -1.81654e-22, 0.999999, 8.70645e-23, -7.48916e-15, -1.81743e-22, 0.999999, 7.45058e-09, -0.495372, 0.10346)
+
+[node name="Monitor" parent="Scene/Desk Sets" instance=ExtResource("3_5xmrd")]
+transform = Transform3D(0.21, 0, 0, 0, 0.21, 0, 0, 0, 0.21, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Scene"]
+transform = Transform3D(0.541048, -0.599869, 0.589428, -6.06784e-08, 0.700872, 0.713287, -0.840992, -0.385922, 0.379205, 12.2314, 20.0683, 10.9252)
+current = true
+fov = 31.7
+near = 0.021
+far = 48.33
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Scene"]
+transform = Transform3D(0.792644, 0.506498, 0.339375, -0.520086, 0.271241, 0.809901, 0.31816, -0.818467, 0.47842, 11.5789, 12.0222, 10.8298)
+shadow_enabled = true
+shadow_opacity = 0.22
+shadow_blur = 0.3
+sky_mode = 1
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285941, 5.1176, 0.279754)
+light_color = Color(0.87451, 0.870588, 0.831373, 1)
+light_energy = 10.0
+light_specular = 0.0
+omni_range = 15.1856
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81634, 2.16009, -0.177265)
+light_color = Color(0.87451, 0.870588, 0.831373, 1)
+light_energy = 10.0
+light_specular = 0.0
+omni_range = 15.1856
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Scene"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.147378, 3.11083, 5.98713)
+light_color = Color(0.87451, 0.870588, 0.831373, 1)
+light_energy = 10.0
+light_specular = 0.0
+omni_range = 15.1856
+
+[node name="MiniRoom" parent="Scene" instance=ExtResource("4_88i73")]
+
+[node name="GlobalPlane" parent="Scene" instance=ExtResource("5_jv1nq")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xpl73")
+
+[node name="UserInterface" parent="." instance=ExtResource("6_3t78r")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_32plp")
+volume_db = -13.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

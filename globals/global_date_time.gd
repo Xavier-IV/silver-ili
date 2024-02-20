@@ -21,8 +21,13 @@ var current = {
 var gameTimeCycles = {"monthMax": 12, "dayMax": 7, "hourMax": 24, "salaryDay": 5, "salaryHour": 12}
 
 
+func _ready():
+	# GlobalSave.load()
+	pass
+
+
 func get_day_in_week():
-	match current["dayInWeek"]:
+	match int(current["dayInWeek"]):
 		1:
 			return "Mon"
 		2:
@@ -37,6 +42,8 @@ func get_day_in_week():
 			return "Sat"
 		7:
 			return "Sun"
+		_:
+			return "Invalid"
 
 
 func get_day_padded():

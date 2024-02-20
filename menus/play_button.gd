@@ -4,7 +4,7 @@ extends TextureButton
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	GlobalDateTime.connect("sig_pause_updated", _on_pause_updated)
-	disabled = GlobalDateTime.is_paused()
+	disabled = !GlobalDateTime.is_paused()
 
 
 func _on_pause_updated():
