@@ -6,6 +6,8 @@ func _ready():
 	pass
 
 
+var version = "v0.0.5"
+
 var current_job = {}
 
 var employment_detail = {

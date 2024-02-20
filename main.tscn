@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3yyx8kaqjhpm"]
+[gd_scene load_steps=6 format=3 uid="uid://d3yyx8kaqjhpm"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/play_button.gd" id="1_4dqs0"]
 [ext_resource type="Script" path="res://scenes/MainMenu/quit_button.gd" id="2_lun3v"]
+[ext_resource type="Script" path="res://version_label.gd" id="3_thk5u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_stffi"]
 bg_color = Color(0.470588, 0.584314, 0.584314, 1)
@@ -77,6 +78,7 @@ theme_override_constants/margin_bottom = 20
 [node name="HFlowContainer" type="HFlowContainer" parent="PanelContainer/VBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/HFlowContainer"]
+[node name="VersionLabel" type="Label" parent="PanelContainer/VBoxContainer/MarginContainer/HFlowContainer"]
 layout_mode = 2
 text = "Early Prototype"
+script = ExtResource("3_thk5u")
