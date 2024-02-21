@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://lpfeo33ivg3l"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1amrr"]
+load_path = "res://.godot/imported/sleep_sprite-sheet.png-7edc60fcd0e1360d7e9d71692cbb549b.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yefm"]
+atlas = SubResource("CompressedTexture2D_1amrr")
+region = Rect2(0, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p66er"]
+atlas = SubResource("CompressedTexture2D_1amrr")
+region = Rect2(14, 0, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hqq6"]
+atlas = SubResource("CompressedTexture2D_1amrr")
+region = Rect2(28, 0, 14, 14)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g8uh4"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2yefm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p66er")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hqq6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_g8uh4")
+frame_progress = 0.314033

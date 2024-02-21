@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://brvqu5rbp37cn"]
+
+[ext_resource type="Script" path="res://scenes/stat_list.gd" id="1_3vow0"]
+[ext_resource type="PackedScene" uid="uid://7blduqcg2sns" path="res://scenes/circle_stat.tscn" id="1_7j53e"]
+[ext_resource type="Texture2D" uid="uid://cbpg0wqskfc4g" path="res://arts/circle_stat_2.svg" id="2_sn3ur"]
+
+[node name="StatList" type="HBoxContainer"]
+layout_direction = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 20
+script = ExtResource("1_3vow0")
+
+[node name="ReputationStat" parent="." instance=ExtResource("1_7j53e")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+label = "14"
+tooltip_text_override = "<null>"
+
+[node name="CircleStat2" parent="." instance=ExtResource("1_7j53e")]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 4
+texture = ExtResource("2_sn3ur")
+label = "0"
+tooltip_text_override = "<null>"

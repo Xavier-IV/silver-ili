@@ -12,6 +12,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	GlobalStat.connect("sig_stats_changed", _on_stats_improved)
 	GlobalStat.connect("sig_stats_improved", _on_stats_improved)
 	GlobalStat.connect("sig_stats_deducted", _on_stats_deducted)
 
