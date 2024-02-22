@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://cq0y8h3cgtn2u"]
+
+[ext_resource type="Script" path="res://scenes/menus/global_event_panel.gd" id="1_popmd"]
+[ext_resource type="Script" path="res://scenes/menus/global_label.gd" id="2_pr8sj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7txm2"]
+bg_color = Color(0.00392157, 0.333333, 0.443137, 1)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="GlobalEventPanel" type="VBoxContainer"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_popmd")
+metadata/_edit_lock_ = true
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7txm2")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="GlobalLabel" type="Label" parent="CenterContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+script = ExtResource("2_pr8sj")

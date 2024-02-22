@@ -5,10 +5,11 @@ var _job = {}
 
 # Called when the node enters the scene tree for the first time.
 func set_detail(job):
+	print("passing details")
 	_job = job
-	$VBoxContainer/HBoxContainer/Title.text = job["name"]
-	$VBoxContainer/Description.text = job["description"]
-	$VBoxContainer/Salary.text = "RM %s" % job["salary"]
+	%Title.text = job["name"]
+	%Description.text = job["description"]
+	%Salary.text = "RM %s" % job["salary"]
 
 
 func _on_button_pressed():

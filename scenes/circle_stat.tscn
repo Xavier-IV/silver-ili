@@ -17,6 +17,7 @@ texture = ExtResource("1_j0mxp")
 script = ExtResource("2_o06jb")
 label = "12"
 tooltip_text_override = "This is a long text!"
+label_color = null
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="."]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr5h66q8k01ll"]
+
+[ext_resource type="Theme" uid="uid://ddk547gkpyr0u" path="res://theme.tres" id="1_dhy57"]
+[ext_resource type="Script" path="res://scenes/menus/earning_label.gd" id="1_o2kir"]
+[ext_resource type="Script" path="res://scenes/menus/salary_label.gd" id="2_2e33v"]
+[ext_resource type="Script" path="res://scenes/menus/overdue_label.gd" id="3_btrfi"]
+
+[node name="GameCashflows" type="VBoxContainer"]
+theme = ExtResource("1_dhy57")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="EarningLabel" type="Label" parent="Control"]
+layout_direction = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Balance: RM 0"
+vertical_alignment = 1
+script = ExtResource("1_o2kir")
+
+[node name="Control2" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="SalaryLabel" type="Label" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.352941, 0.992157, 0, 1)
+text = "Salary: RM 0"
+vertical_alignment = 1
+script = ExtResource("2_2e33v")
+
+[node name="Control3" type="Control" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+
+[node name="OverdueLabel" type="Label" parent="Control3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 0.360784, 0.403922, 1)
+text = "Overdue:"
+vertical_alignment = 1
+script = ExtResource("3_btrfi")
+
+[node name="Container" type="Container" parent="."]
+layout_mode = 2

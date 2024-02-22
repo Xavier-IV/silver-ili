@@ -10,6 +10,8 @@ var stats = {
 	"mental_health": 100.0,
 	"creativity_health": 100.0,
 	"social_health": 100.0,
+	"global_reputation": 0.0,
+	"work_reputation": 0.0,
 	"sleepiness": 0.0,
 }
 
@@ -32,6 +34,10 @@ var stat_ratio = {
 func _ready():
 	# GlobalSave.load()
 	pass
+
+
+func _get_stats(_name):
+	return stats[_name] if stats.has(_name) else 0.0
 
 
 func get_mental_health():

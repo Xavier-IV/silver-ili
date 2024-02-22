@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="3_ltr2e"]
 [ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_1hgo7"]
 [ext_resource type="PackedScene" uid="uid://lhtpgiqmhctm" path="res://scenes/global_plane.tscn" id="5_vgemq"]
-[ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://menus/menu.tscn" id="6_t2nwv"]
+[ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://scenes/menus/menu.tscn" id="6_t2nwv"]
 [ext_resource type="AudioStream" uid="uid://d2f4xltpubfac" path="res://audios/Stream Loops - 2023-11-29.ogg" id="7_fefvw"]
 
 [sub_resource type="Environment" id="Environment_xpl73"]
@@ -19,6 +19,7 @@ glow_enabled = true
 script = ExtResource("1_s8hew")
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [node name="Scene" type="Node" parent="."]
@@ -81,6 +82,5 @@ environment = SubResource("Environment_xpl73")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_fefvw")
 volume_db = -13.0
-autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

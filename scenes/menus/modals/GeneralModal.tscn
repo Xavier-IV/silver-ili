@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cmpxtgpcq5kb6"]
 
-[ext_resource type="StyleBox" uid="uid://h5lfpv36tccw" path="res://menus/modals/GeneralModalButtonNormal.tres" id="1_b548h"]
-[ext_resource type="Script" path="res://menus/modals/general_modal.gd" id="1_xkd6x"]
+[ext_resource type="StyleBox" uid="uid://h5lfpv36tccw" path="res://scenes/menus/modals/GeneralModalButtonNormal.tres" id="1_b548h"]
+[ext_resource type="Script" path="res://scenes/menus/modals/general_modal.gd" id="1_xkd6x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_exy8m"]
 bg_color = Color(0.866667, 0.866667, 0.835294, 1)

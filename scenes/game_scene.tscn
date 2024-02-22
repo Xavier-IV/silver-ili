@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="3_5xmrd"]
 [ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_88i73"]
 [ext_resource type="PackedScene" uid="uid://lhtpgiqmhctm" path="res://scenes/global_plane.tscn" id="5_jv1nq"]
-[ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://menus/menu.tscn" id="6_3t78r"]
+[ext_resource type="PackedScene" uid="uid://dtcyv2sxhklx3" path="res://scenes/menus/menu.tscn" id="6_3t78r"]
 [ext_resource type="AudioStream" uid="uid://d2f4xltpubfac" path="res://audios/Stream Loops - 2023-11-29.ogg" id="7_32plp"]
 
 [sub_resource type="Environment" id="Environment_xpl73"]

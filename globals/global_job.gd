@@ -41,6 +41,7 @@ func _on_hour_advanced():
 
 			GlobalSignal.emit_signal("sig_notify_stat", _notification)
 			GlobalStat.improve_stat_now("social_health", 0.1)
+			GlobalStat.improve_stat_now("work_reputation", 0.1)
 
 		if randf() < 0.5:
 			var _notification = GlobalSignal.Notification.new()
@@ -50,6 +51,7 @@ func _on_hour_advanced():
 
 			GlobalSignal.emit_signal("sig_notify_stat", _notification)
 			GlobalStat.deduct_stat_now("mental_health", 0.8)
+			GlobalStat.improve_stat_now("work_reputation", 0.1)
 
 		if GlobalDateTime.get_hour() == GlobalVar.employment_detail["working_hours"][1]:
 			var _notification = GlobalSignal.Notification.new()

@@ -12,9 +12,15 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	GlobalStat.connect("sig_stats_changed", _on_stats_improved)
+	GlobalStat.connect("sig_stats_changed", _on_stats_changed)
 	GlobalStat.connect("sig_stats_improved", _on_stats_improved)
 	GlobalStat.connect("sig_stats_deducted", _on_stats_deducted)
+
+
+func _on_stats_changed(stat_name):
+	if stat_name != progress_stat_name:
+		return
+	$AnimationPlayer.play("adjusted")
 
 
 func _on_stats_improved(stat_name, _intensity):
