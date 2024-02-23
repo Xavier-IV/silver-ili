@@ -12,10 +12,10 @@ var current_job = {}
 
 var employment_detail = {
 	"job_id": 0,
-	"employer_name": "Example employer",
+	"employer_name": "",
 	"description": "",
 	"role": "",
-	"salary": 10000,
+	"salary": 0.0,
 	"start_date": "",
 	"end_date": "",
 	"status": "Pending",

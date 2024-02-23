@@ -16,7 +16,6 @@ func set_tooltip_message(message):
 
 
 func _on_mouse_exited():
-	print("exit")
 	queue_free()
 
 

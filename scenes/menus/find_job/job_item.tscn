@@ -14,14 +14,15 @@ border_color = Color(0.658824, 0.835294, 0.886275, 1)
 [sub_resource type="Theme" id="Theme_7k3dh"]
 
 [node name="JobItem" type="MarginContainer"]
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 163.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("1_s63hm")
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 script = ExtResource("1_hf3bk")
 

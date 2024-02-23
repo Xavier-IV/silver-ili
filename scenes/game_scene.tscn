@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://w11w5237gwag"]
+[gd_scene load_steps=8 format=3 uid="uid://w11w5237gwag"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_qsenr"]
 [ext_resource type="PackedScene" uid="uid://dmk3b3rglyv4k" path="res://scenes/table.tscn" id="2_w2vkb"]
 [ext_resource type="PackedScene" uid="uid://coxw0lsua1i7k" path="res://scenes/monitor.tscn" id="3_5xmrd"]
 [ext_resource type="PackedScene" uid="uid://cyk1fh4jmfcad" path="res://scenes/mini_room.tscn" id="4_88i73"]
@@ -16,7 +15,6 @@ sdfgi_enabled = true
 glow_enabled = true
 
 [node name="Main" type="Node3D"]
-script = ExtResource("1_qsenr")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5

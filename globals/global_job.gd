@@ -21,9 +21,7 @@ func currently_working():
 
 
 func _on_hour_advanced():
-	print("hour advanced")
 	if currently_working():
-		print("currently working")
 		if GlobalDateTime.get_hour() == GlobalVar.employment_detail["working_hours"][0]:
 			var _notification = GlobalSignal.Notification.new()
 

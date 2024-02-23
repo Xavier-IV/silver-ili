@@ -6,8 +6,8 @@ extends HBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var reputation_message = "[b]Global Reputation[/b]\n\n"
-	reputation_message += "Your standing in your community and around the world. Higher reputation unlocks more opportunities and resources."
+	var reputation_message = "[b]Followers[/b]\n\n"
+	reputation_message += "Your influence in your community and around the world. Higher reputation unlocks more opportunities and resources."
 	reputation_global_stat.set_tooltip(reputation_message)
 
 	var reputation_work_message = "[b]Work Reputation[/b]\n\n"
@@ -18,7 +18,6 @@ func _ready():
 
 
 func _on_stats_changed(stat_name):
-	print(stat_name)
 	if stat_name != "global_reputation" and stat_name != "work_reputation":
 		return
 	_update()

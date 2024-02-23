@@ -6,9 +6,6 @@ extends ScrollContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print("FindJobMenu ready")
-	print(GlobalVar.jobs)
-	print(listing)
 	for job in GlobalVar.jobs.values():
 		var job_item_instance = job_item.instantiate()
 		job_item_instance.set_detail(job)

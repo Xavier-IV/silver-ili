@@ -13,7 +13,7 @@ func _ready():
 		var content_instance = content.instantiate()
 		content_instance.size_flags_vertical = 3
 		content_instance.size_flags_horizontal = 3
-		%ContentContainer.add_child(content_instance)
+		%Content.add_child(content_instance)
 
 
 func _on_close_button_pressed():

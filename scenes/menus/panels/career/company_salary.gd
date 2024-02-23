@@ -8,4 +8,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	text = "Company Name: RM %s" % GlobalVar.employment_detail["salary"]
+	text = "Company Salary: RM %s" % GlobalVar.employment_detail["salary"]

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scenes/menus/panels/section_panel.gd" id="2_7m8pw"]
 [ext_resource type="PackedScene" uid="uid://c6p08s4x6uwo4" path="res://scenes/common/game_button.tscn" id="2_8wy2t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_811h5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5pot"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -14,7 +14,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wsi1i"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6lmv"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -25,7 +25,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkv0w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xi0x"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -37,7 +37,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrep5"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvekw"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -89,10 +89,10 @@ text = "Sample Name"
 [node name="CloseButton" parent="MarginContainer/ContentContainer/HBoxContainer" instance=ExtResource("2_8wy2t")]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_811h5")
-theme_override_styles/hover = SubResource("StyleBoxFlat_wsi1i")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_lkv0w")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_hrep5")
+theme_override_styles/normal = SubResource("StyleBoxFlat_a5pot")
+theme_override_styles/hover = SubResource("StyleBoxFlat_b6lmv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_5xi0x")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yvekw")
 theme_override_styles/focus = SubResource("StyleBoxFlat_672nq")
 text = "Close"
 _size = "nm"
@@ -101,5 +101,12 @@ _text = "Close"
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/ContentContainer"]
 layout_mode = 2
 theme_override_constants/separation = 20
+
+[node name="Content" type="ScrollContainer" parent="MarginContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 3
 
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]

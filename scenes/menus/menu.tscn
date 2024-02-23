@@ -17,6 +17,7 @@
 [ext_resource type="Script" path="res://scenes/menus/stat_list.gd" id="16_6uk8p"]
 [ext_resource type="PackedScene" uid="uid://by8qa8g7sjbeu" path="res://scenes/menus/panels/career/career_details.tscn" id="16_xjug7"]
 [ext_resource type="Script" path="res://scenes/menus/panels/jobs/job_listings.gd" id="17_m13lr"]
+[ext_resource type="PackedScene" uid="uid://cqqcgq6gqvbn" path="res://scenes/menus/panels/jobs/job_listings.tscn" id="19_u2wei"]
 [ext_resource type="PackedScene" uid="uid://brvqu5rbp37cn" path="res://scenes/StatList.tscn" id="26_ragi3"]
 
 [sub_resource type="Animation" id="Animation_w2anp"]
@@ -279,7 +280,7 @@ _data = {
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mt8n"]
 
-[sub_resource type="PackedScene" id="PackedScene_g5gmq"]
+[sub_resource type="PackedScene" id="PackedScene_5cyf0"]
 resource_local_to_scene = true
 _bundled = {
 "conn_count": 0,
@@ -290,20 +291,6 @@ _bundled = {
 "node_paths": [],
 "nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 1, 4, 2, 5, 2, 6, 3, 0, 0, 0, 8, 8, -1, 3, 9, 2, 10, 4, 11, 4, 0),
 "variants": [15, 1.0, 2, ExtResource("17_m13lr"), 3],
-"version": 3
-}
-
-[sub_resource type="PackedScene" id="PackedScene_n6uoq"]
-resource_local_to_scene = true
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("JobListings", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "ScrollContainer", "VBoxContainer", "z_index", "y_sort_enabled", "layout_mode", "size_flags_horizontal", "size_flags_vertical"),
-"node_count": 2,
-"node_paths": [],
-"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 1, 4, 2, 5, 2, 6, 3, 0, 0, 0, 8, 8, -1, 5, 9, 4, 10, 5, 11, 2, 12, 4, 13, 4, 0),
-"variants": [15, 1.0, 2, ExtResource("17_m13lr"), 3, true],
 "version": 3
 }
 
@@ -327,8 +314,8 @@ script = ExtResource("2_8nkf3")
 [node name="GlobalEventPanel" parent="." instance=ExtResource("4_v8ik4")]
 layout_mode = 1
 offset_top = -44.24
-offset_right = 81.0
-offset_bottom = 18.76
+offset_bottom = -44.24
+metadata/_edit_group_ = true
 
 [node name="PrimeContainer" type="HBoxContainer" parent="."]
 y_sort_enabled = true
@@ -457,26 +444,34 @@ theme_type_variation = &"FlatButton"
 text = "Find Job"
 script = ExtResource("10_iirfd")
 
-[node name="CareerPanel" parent="PrimeContainer/SideControl" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+[node name="MarginContainer" type="MarginContainer" parent="PrimeContainer/SideControl"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CareerPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 section_name = "Career"
 content = ExtResource("16_xjug7")
 
-[node name="SkillsPanel" parent="PrimeContainer/SideControl" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+[node name="SkillsPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 section_name = "Skills"
-content = SubResource("PackedScene_g5gmq")
+content = SubResource("PackedScene_5cyf0")
 
-[node name="FindJobPanel" parent="PrimeContainer/SideControl" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+[node name="FindJobPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 section_name = "Find Job"
-content = SubResource("PackedScene_n6uoq")
+content = ExtResource("19_u2wei")
 
 [connection signal="pressed" from="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/CareerButton" to="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/CareerButton" method="_on_pressed"]
 [connection signal="pressed" from="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/SkillsButton" to="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/SkillsButton" method="_on_pressed"]

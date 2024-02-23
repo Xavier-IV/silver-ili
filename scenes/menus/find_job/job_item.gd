@@ -5,7 +5,6 @@ var _job = {}
 
 # Called when the node enters the scene tree for the first time.
 func set_detail(job):
-	print("passing details")
 	_job = job
 	%Title.text = job["name"]
 	%Description.text = job["description"]

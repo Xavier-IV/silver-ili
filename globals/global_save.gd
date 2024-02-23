@@ -7,7 +7,6 @@ signal sig_loading_game
 
 
 func save():
-	print("Saving game...")
 	emit_signal("sig_saving_game")
 	var global_employment = {
 		"current": GlobalVar.current_job, "detail": GlobalVar.employment_detail
@@ -42,7 +41,6 @@ func save():
 
 
 func load():
-	print("Loading game...use a lot resource")
 	if not FileAccess.file_exists("user://savegame.save"):
 		return  # Error! We don't have a save to load.
 
@@ -64,7 +62,6 @@ func load():
 			)
 			continue
 		var node_data = json.data
-		print(node_data["global_employment"])
 		GlobalVar.current_job = node_data["global_employment"]["current"]
 		GlobalVar.employment_detail = node_data["global_employment"]["detail"]
 
