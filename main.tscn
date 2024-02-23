@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3yyx8kaqjhpm"]
+[gd_scene load_steps=7 format=3 uid="uid://d3yyx8kaqjhpm"]
 
 [ext_resource type="Script" path="res://scenes/MainMenu/play_button.gd" id="1_4dqs0"]
+[ext_resource type="Script" path="res://scenes/MainMenu/continue_button.gd" id="1_tav2n"]
 [ext_resource type="Script" path="res://scenes/MainMenu/quit_button.gd" id="2_lun3v"]
 [ext_resource type="Script" path="res://version_label.gd" id="3_thk5u"]
 
@@ -56,10 +57,16 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_ujhh1")
 layout_mode = 2
 theme_override_constants/separation = 10
 
+[node name="ContinueButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+text = "Continue"
+script = ExtResource("1_tav2n")
+
 [node name="PlayButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(2.08165e-12, 60)
 layout_mode = 2
-text = "New Game"
+text = "Create New Game"
 script = ExtResource("1_4dqs0")
 
 [node name="QuitButton" type="Button" parent="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer"]
