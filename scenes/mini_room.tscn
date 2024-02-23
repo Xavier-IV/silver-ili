@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3 uid="uid://cyk1fh4jmfcad"]
 
-[ext_resource type="PackedScene" uid="uid://bx7pr0c6180d6" path="res://arts/mini_room_set.glb" id="1_0ltmk"]
+[ext_resource type="PackedScene" uid="uid://bx7pr0c6180d6" path="res://assets/mini_room_set.glb" id="1_0ltmk"]
 
 [node name="MiniRoom" instance=ExtResource("1_0ltmk")]

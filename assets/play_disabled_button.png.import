@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxoviafxwnhbh"
-path="res://.godot/imported/circle_stat.png-7db8b3183e7e896eeb67db7e33d8a8b5.ctex"
+uid="uid://cw41eddlbb2c0"
+path="res://.godot/imported/play_disabled_button.png-d883496e3c327079586a6b0ae818fad8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/circle_stat.png"
-dest_files=["res://.godot/imported/circle_stat.png-7db8b3183e7e896eeb67db7e33d8a8b5.ctex"]
+source_file="res://assets/play_disabled_button.png"
+dest_files=["res://.godot/imported/play_disabled_button.png-d883496e3c327079586a6b0ae818fad8.ctex"]
 
 [params]
 

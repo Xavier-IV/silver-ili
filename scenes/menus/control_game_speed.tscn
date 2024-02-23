@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://b30oqu38j2xp5"]
 
-[ext_resource type="Texture2D" uid="uid://k3yleyy2ugj8" path="res://arts/pause_button.png" id="1_j23g3"]
-[ext_resource type="Texture2D" uid="uid://fxp4qa0vp4s2" path="res://arts/pause_hover_button.png" id="2_5nnle"]
-[ext_resource type="Texture2D" uid="uid://dfbmunhvh385p" path="res://arts/pause_disabled_button.png" id="3_8lb28"]
+[ext_resource type="Texture2D" uid="uid://k3yleyy2ugj8" path="res://assets/pause_button.png" id="1_j23g3"]
+[ext_resource type="Texture2D" uid="uid://fxp4qa0vp4s2" path="res://assets/pause_hover_button.png" id="2_5nnle"]
+[ext_resource type="Texture2D" uid="uid://dfbmunhvh385p" path="res://assets/pause_disabled_button.png" id="3_8lb28"]
 [ext_resource type="Script" path="res://scenes/menus/pause_button.gd" id="4_a2f3n"]
-[ext_resource type="Texture2D" uid="uid://uvikas8g7hme" path="res://arts/play_button.png" id="5_cdxqa"]
-[ext_resource type="Texture2D" uid="uid://b0vr3ycguy2jx" path="res://arts/play_hover_button.png" id="6_o2w2t"]
-[ext_resource type="Texture2D" uid="uid://cw41eddlbb2c0" path="res://arts/play_disabled_button.png" id="7_yyayc"]
+[ext_resource type="Texture2D" uid="uid://uvikas8g7hme" path="res://assets/play_button.png" id="5_cdxqa"]
+[ext_resource type="Texture2D" uid="uid://b0vr3ycguy2jx" path="res://assets/play_hover_button.png" id="6_o2w2t"]
+[ext_resource type="Texture2D" uid="uid://cw41eddlbb2c0" path="res://assets/play_disabled_button.png" id="7_yyayc"]
 [ext_resource type="Script" path="res://scenes/menus/play_button.gd" id="8_oew7r"]
 
 [node name="ControlGameSpeed" type="CenterContainer"]

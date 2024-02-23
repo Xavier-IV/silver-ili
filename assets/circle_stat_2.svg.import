@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ej7v4kuxqts"
-path="res://.godot/imported/Ellipse 2.svg-b5812756471bbb358f3de6413a9fd202.ctex"
+uid="uid://cbpg0wqskfc4g"
+path="res://.godot/imported/circle_stat_2.svg-d138fe993ee3b97795796a8da6b4b9d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Ellipse 2.svg"
-dest_files=["res://.godot/imported/Ellipse 2.svg-b5812756471bbb358f3de6413a9fd202.ctex"]
+source_file="res://assets/circle_stat_2.svg"
+dest_files=["res://.godot/imported/circle_stat_2.svg-d138fe993ee3b97795796a8da6b4b9d1.ctex"]
 
 [params]
 

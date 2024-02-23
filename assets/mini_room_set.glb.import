@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bx7pr0c6180d6"
-path="res://.godot/imported/mini_room_set.glb-2e5f1e3bb2fa64c13dac2a7dce5a4e46.scn"
+path="res://.godot/imported/mini_room_set.glb-897bb818ddc3bb3df9180dab17d48820.scn"
 
 [deps]
 
-source_file="res://arts/mini_room_set.glb"
-dest_files=["res://.godot/imported/mini_room_set.glb-2e5f1e3bb2fa64c13dac2a7dce5a4e46.scn"]
+source_file="res://assets/mini_room_set.glb"
+dest_files=["res://.godot/imported/mini_room_set.glb-897bb818ddc3bb3df9180dab17d48820.scn"]
 
 [params]
 

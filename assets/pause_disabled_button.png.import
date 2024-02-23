@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ekirpfwfx77j"
-path="res://.godot/imported/Frame 5.svg-c6070680c513f3d443b92151e0a62132.ctex"
+uid="uid://dfbmunhvh385p"
+path="res://.godot/imported/pause_disabled_button.png-72781dac2eafdeff4d328cf07e414d9a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://arts/Frame 5.svg"
-dest_files=["res://.godot/imported/Frame 5.svg-c6070680c513f3d443b92151e0a62132.ctex"]
+source_file="res://assets/pause_disabled_button.png"
+dest_files=["res://.godot/imported/pause_disabled_button.png-72781dac2eafdeff4d328cf07e414d9a.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
