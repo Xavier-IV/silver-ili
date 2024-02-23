@@ -7,6 +7,7 @@ signal sig_loading_game
 
 
 func save():
+	print("Saving game...")
 	emit_signal("sig_saving_game")
 	var global_employment = {
 		"current": GlobalVar.current_job, "detail": GlobalVar.employment_detail
@@ -41,9 +42,10 @@ func save():
 
 
 func load():
+	print("loading..")
 	if not FileAccess.file_exists("user://savegame.save"):
 		return  # Error! We don't have a save to load.
-
+	print("load success")
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	while save_game.get_position() < save_game.get_length():
 		var json_string = save_game.get_line()

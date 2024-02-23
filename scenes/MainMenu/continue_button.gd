@@ -9,6 +9,7 @@ func _ready():
 	disabled = true
 
 
-func _pressed():
+func _on_pressed():
+	print("Continue...")
 	GlobalSave.load()
 	get_tree().change_scene_to_file("res://scenes/Game/game_scene.tscn")
