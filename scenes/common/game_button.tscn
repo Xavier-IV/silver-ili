@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6p08s4x6uwo4"]
+
+[ext_resource type="Script" path="res://scenes/common/game_button.gd" id="1_a8bbu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kgbx1"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i2bqu"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqxkx"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k56h8"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_op4ph"]
+content_margin_left = 30.0
+content_margin_top = 15.0
+content_margin_right = 30.0
+content_margin_bottom = 15.0
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="GameButton" type="Button"]
+unique_name_in_owner = true
+offset_left = 1.52588e-05
+offset_top = 1.04904e-05
+offset_right = -1.52588e-05
+offset_bottom = -1.04904e-05
+theme_override_styles/normal = SubResource("StyleBoxFlat_kgbx1")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i2bqu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xqxkx")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_k56h8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_op4ph")
+text = "Button"
+script = ExtResource("1_a8bbu")
+_size = "xl"
+metadata/_edit_use_anchors_ = true

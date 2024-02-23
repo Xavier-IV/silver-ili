@@ -1,0 +1,141 @@
+[gd_scene load_steps=16 format=3 uid="uid://bbihnb28ctecp"]
+
+[ext_resource type="Theme" uid="uid://ddk547gkpyr0u" path="res://theme.tres" id="1_2aydh"]
+[ext_resource type="Script" path="res://scenes/menus/calendar_month_label.gd" id="2_6la5d"]
+[ext_resource type="Script" path="res://scenes/menus/calendar_year_label.gd" id="3_2goi4"]
+[ext_resource type="Script" path="res://scenes/menus/calendar_time_label.gd" id="4_on4nj"]
+[ext_resource type="Script" path="res://scenes/menus/calendar_day_label.gd" id="5_rj00b"]
+[ext_resource type="Script" path="res://scenes/menus/progress_bar.gd" id="6_0km58"]
+[ext_resource type="Script" path="res://scenes/menus/stats_group.gd" id="7_ff4l3"]
+[ext_resource type="PackedScene" uid="uid://m52aiefccuha" path="res://scenes/StatBar.tscn" id="8_a1gip"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0kskh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ennqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cic2i"]
+
+[sub_resource type="Theme" id="Theme_16vng"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hic35"]
+bg_color = Color(0.129412, 0.176471, 0.0980392, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.243137, 0.4, 0.341176, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7eil"]
+bg_color = Color(0.388235, 0.686275, 0.337255, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l87ag"]
+
+[node name="GameStats" type="VBoxContainer"]
+theme = ExtResource("1_2aydh")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_direction = 1
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="CalendarMonthLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("1_2aydh")
+text = "01/01"
+vertical_alignment = 1
+script = ExtResource("2_6la5d")
+
+[node name="CalendarYearLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Y1"
+vertical_alignment = 1
+script = ExtResource("3_2goi4")
+
+[node name="VSeparator2" type="VSeparator" parent="HBoxContainer"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0kskh")
+
+[node name="CalendarTimeLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "08:00"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("4_on4nj")
+
+[node name="CalendarDayLabel2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mon"
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("5_rj00b")
+
+[node name="HSeparator4" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cic2i")
+
+[node name="ProgressBar" type="ProgressBar" parent="PanelContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme = SubResource("Theme_16vng")
+theme_override_styles/background = SubResource("StyleBoxFlat_hic35")
+theme_override_styles/fill = SubResource("StyleBoxFlat_q7eil")
+value = 50.0
+script = ExtResource("6_0km58")
+tooltip_text_override = null
+
+[node name="HSeparator5" type="HSeparator" parent="."]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
+
+[node name="OtherStats" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l87ag")
+
+[node name="StatsGroup" type="HBoxContainer" parent="OtherStats"]
+layout_mode = 2
+script = ExtResource("7_ff4l3")
+
+[node name="MentalStat" parent="OtherStats/StatsGroup" instance=ExtResource("8_a1gip")]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+size_flags_stretch_ratio = 5.0
+progress_stat_name = "mental_health"
+progress_label_text = ""
+progress_label_color = Color(0.12549, 0.513726, 0.796078, 1)
+progress_bar_color = Color(0.12549, 0.513726, 0.796078, 1)
+
+[node name="VSeparator" type="VSeparator" parent="OtherStats/StatsGroup"]
+custom_minimum_size = Vector2(100, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_0kskh")
+
+[node name="CreativityStat2" parent="OtherStats/StatsGroup" instance=ExtResource("8_a1gip")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+progress_stat_name = "creativity_health"
+progress_label_text = ""
+progress_label_color = Color(0.819608, 0.133333, 0.74902, 1)
+progress_bar_color = Color(0.819608, 0.133333, 0.74902, 1)
+
+[node name="SocialStat" parent="OtherStats/StatsGroup" instance=ExtResource("8_a1gip")]
+layout_mode = 2
+size_flags_stretch_ratio = 2.0
+progress_stat_name = "social_health"
+progress_label_text = ""
+progress_label_color = Color(0.603922, 0.815686, 0.337255, 1)
+progress_bar_color = Color(0.603922, 0.815686, 0.337255, 1)
+
+[connection signal="mouse_entered" from="PanelContainer/ProgressBar" to="PanelContainer/ProgressBar" method="_on_mouse_entered"]

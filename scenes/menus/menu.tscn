@@ -1,0 +1,479 @@
+[gd_scene load_steps=31 format=3 uid="uid://dtcyv2sxhklx3"]
+
+[ext_resource type="Theme" uid="uid://ddk547gkpyr0u" path="res://theme.tres" id="1_b6tx8"]
+[ext_resource type="Script" path="res://scenes/menus/menu.gd" id="1_md87q"]
+[ext_resource type="Script" path="res://scenes/menus/animation_player.gd" id="2_8nkf3"]
+[ext_resource type="PackedScene" uid="uid://cq0y8h3cgtn2u" path="res://scenes/menus/global_event_panel.tscn" id="4_v8ik4"]
+[ext_resource type="PackedScene" uid="uid://bbihnb28ctecp" path="res://scenes/menus/game_stats.tscn" id="5_1yx6t"]
+[ext_resource type="Script" path="res://scenes/menus/event_list.gd" id="6_nkdjw"]
+[ext_resource type="PackedScene" uid="uid://cr5h66q8k01ll" path="res://scenes/menus/game_cashflows.tscn" id="7_v3tdp"]
+[ext_resource type="PackedScene" uid="uid://b30oqu38j2xp5" path="res://scenes/menus/control_game_speed.tscn" id="9_hyppd"]
+[ext_resource type="Script" path="res://scenes/menus/find_job/find_job_button.gd" id="10_iirfd"]
+[ext_resource type="Script" path="res://scenes/menus/side_control.gd" id="10_kvcoc"]
+[ext_resource type="Theme" uid="uid://whmxv74el7e6" path="res://canvas_actions.tres" id="11_iqw4o"]
+[ext_resource type="Script" path="res://scenes/menus/career_button.gd" id="12_at85m"]
+[ext_resource type="Script" path="res://scenes/menus/skills_button.gd" id="13_b1u7a"]
+[ext_resource type="PackedScene" uid="uid://b0n3tpjf4sbp" path="res://scenes/menus/panels/section_panel.tscn" id="14_ac5pp"]
+[ext_resource type="Script" path="res://scenes/menus/stat_list.gd" id="16_6uk8p"]
+[ext_resource type="PackedScene" uid="uid://by8qa8g7sjbeu" path="res://scenes/menus/panels/career/career_details.tscn" id="16_xjug7"]
+[ext_resource type="Script" path="res://scenes/menus/panels/jobs/job_listings.gd" id="17_m13lr"]
+[ext_resource type="PackedScene" uid="uid://cqqcgq6gqvbn" path="res://scenes/menus/panels/jobs/job_listings.tscn" id="19_u2wei"]
+[ext_resource type="PackedScene" uid="uid://brvqu5rbp37cn" path="res://scenes/StatList.tscn" id="26_ragi3"]
+
+[sub_resource type="Animation" id="Animation_w2anp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchors_preset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Control/EarningLabel:anchors_preset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../../../../../../GlobalEventPanel:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2.08165e-12, -44.24)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../../../../../GlobalEventPanel:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../../../../../GlobalEventPanel:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../../Control/EarningLabel:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../../Control/EarningLabel:theme_override_colors/font_color")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../../../../../../GlobalEventPanel:anchors_preset")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0.001),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="Animation" id="Animation_ohk72"]
+resource_name = "animate_balance"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Control/EarningLabel:anchors_preset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Control/EarningLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -20), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_q5xb6"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Control/EarningLabel:anchors_preset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Control/EarningLabel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -20), Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Control/EarningLabel:theme_override_colors/font_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.188235, 0.215686, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_wix6j"]
+resource_name = "animate_event"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../../../../../GlobalEventPanel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(0.574349, 0.329877),
+"update": 0,
+"values": [Vector2(2.08165e-12, -44.24), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../../../../../GlobalEventPanel:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../../../../GlobalEventPanel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ud87y"]
+resource_name = "animate_salary"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(2.08165e-12, -10), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:anchors_preset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_b1gwl"]
+_data = {
+"RESET": SubResource("Animation_w2anp"),
+"animate_balance": SubResource("Animation_ohk72"),
+"animate_balance_deducted": SubResource("Animation_q5xb6"),
+"animate_event": SubResource("Animation_wix6j"),
+"animate_salary": SubResource("Animation_ud87y")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ennqc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28e2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wg1q2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4mt8n"]
+
+[sub_resource type="PackedScene" id="PackedScene_0dd85"]
+resource_local_to_scene = true
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("JobListings", "anchors_preset", "anchor_right", "anchor_bottom", "grow_horizontal", "grow_vertical", "script", "ScrollContainer", "VBoxContainer", "layout_mode", "size_flags_horizontal", "size_flags_vertical"),
+"node_count": 2,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 7, 0, -1, 6, 1, 0, 2, 1, 3, 1, 4, 2, 5, 2, 6, 3, 0, 0, 0, 8, 8, -1, 3, 9, 2, 10, 4, 11, 4, 0),
+"variants": [15, 1.0, 2, ExtResource("17_m13lr"), 3],
+"version": 3
+}
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_md87q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+root_node = NodePath("../PrimeContainer/MainControl/VBoxContainer/GameCashflows/Control2/SalaryLabel")
+libraries = {
+"": SubResource("AnimationLibrary_b1gwl")
+}
+script = ExtResource("2_8nkf3")
+
+[node name="GlobalEventPanel" parent="." instance=ExtResource("4_v8ik4")]
+layout_mode = 1
+offset_top = -44.24
+offset_bottom = -44.24
+metadata/_edit_group_ = true
+metadata/_edit_use_anchors_ = true
+
+[node name="PrimeContainer" type="HBoxContainer" parent="."]
+y_sort_enabled = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="MainControl" type="MarginContainer" parent="PrimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrimeContainer/MainControl"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="GameStats" parent="PrimeContainer/MainControl/VBoxContainer" instance=ExtResource("5_1yx6t")]
+layout_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ennqc")
+
+[node name="StatList" type="RichTextLabel" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+script = ExtResource("16_6uk8p")
+
+[node name="GameCashflows" parent="PrimeContainer/MainControl/VBoxContainer" instance=ExtResource("7_v3tdp")]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_28e2y")
+
+[node name="HSeparator3" type="HSeparator" parent="PrimeContainer/MainControl/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 10)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_wg1q2")
+
+[node name="EventLabel" type="Label" parent="PrimeContainer/MainControl/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_b6tx8")
+text = "Events"
+
+[node name="Container" type="Container" parent="PrimeContainer/MainControl/VBoxContainer"]
+layout_mode = 2
+
+[node name="EventList" type="RichTextLabel" parent="PrimeContainer/MainControl/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+bbcode_enabled = true
+script = ExtResource("6_nkdjw")
+
+[node name="ControlGameSpeed" parent="PrimeContainer/MainControl/VBoxContainer" instance=ExtResource("9_hyppd")]
+layout_mode = 2
+
+[node name="SideControl" type="PanelContainer" parent="PrimeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4mt8n")
+script = ExtResource("10_kvcoc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PrimeContainer/SideControl"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="PrimeContainer/SideControl/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 20
+
+[node name="GamePerks" parent="PrimeContainer/SideControl/VBoxContainer/MarginContainer2" instance=ExtResource("26_ragi3")]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PrimeContainer/SideControl/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ActionGroups" type="HBoxContainer" parent="PrimeContainer/SideControl/VBoxContainer/MarginContainer"]
+layout_direction = 1
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 10
+theme = ExtResource("11_iqw4o")
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="CareerButton" type="Button" parent="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups"]
+layout_mode = 2
+text = "Career"
+script = ExtResource("12_at85m")
+
+[node name="SkillsButton" type="Button" parent="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups"]
+visible = false
+layout_mode = 2
+text = "Skills
+"
+script = ExtResource("13_b1u7a")
+
+[node name="FindJobButton" type="Button" parent="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups"]
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "Find Job"
+script = ExtResource("10_iirfd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PrimeContainer/SideControl"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="CareerPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+section_name = "Career"
+content = ExtResource("16_xjug7")
+
+[node name="SkillsPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+section_name = "Skills"
+content = SubResource("PackedScene_0dd85")
+
+[node name="FindJobPanel" parent="PrimeContainer/SideControl/MarginContainer" groups=["PanelGroups"] instance=ExtResource("14_ac5pp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+section_name = "Find Job"
+content = ExtResource("19_u2wei")
+
+[connection signal="pressed" from="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/CareerButton" to="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/CareerButton" method="_on_pressed"]
+[connection signal="pressed" from="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/SkillsButton" to="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/SkillsButton" method="_on_pressed"]
+[connection signal="pressed" from="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/FindJobButton" to="PrimeContainer/SideControl/VBoxContainer/MarginContainer/ActionGroups/FindJobButton" method="_on_pressed"]

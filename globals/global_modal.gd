@@ -3,7 +3,7 @@ extends Node
 signal sig_show_modal_dialog(title: String, message: String, buttons, callback)
 signal sig_close_modal(title: String)
 
-@onready var modal = preload("res://menus/modals/GeneralModal.tscn")
+@onready var modal = preload("res://scenes/menus/modals/GeneralModal.tscn")
 
 
 func init_modal(parent, title, description, buttons, callbacks):

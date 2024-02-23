@@ -6,7 +6,7 @@ func _ready():
 	pass
 
 
-var version = "v0.0.5"
+var version = "v0.0.6"
 
 var current_job = {}
 
@@ -15,7 +15,7 @@ var employment_detail = {
 	"employer_name": "",
 	"description": "",
 	"role": "",
-	"salary": 0,
+	"salary": 0.0,
 	"start_date": "",
 	"end_date": "",
 	"status": "Pending",

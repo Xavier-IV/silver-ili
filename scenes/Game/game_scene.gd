@@ -9,7 +9,7 @@ func _ready():
 	GlobalDateTime.connect("sig_salary_day", _on_salary_day)
 	GlobalDateTime.connect("sig_day_advanced", _on_day_advanced)
 	GlobalStat.begin_stat()
-
+	$AudioStreamPlayer.play()
 	if !GlobalEvent.completed_event("onboarding"):
 		GlobalDateTime.set_paused(true)
 		var title = "SoftwareDev RPG"
