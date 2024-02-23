@@ -38,6 +38,7 @@ func _on_click_2():
 	GlobalModal.init_modal(
 		self, title, description, ["Let's Go!"], [func(): GlobalDateTime.set_paused(false)]
 	)
+	print(GlobalEvent.events)
 
 
 func _on_timer_timeout():

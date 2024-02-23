@@ -89,3 +89,6 @@ layout_mode = 2
 layout_mode = 2
 text = "Early Prototype"
 script = ExtResource("3_thk5u")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer/ContinueButton" to="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer/ContinueButton" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer/PlayButton" to="PanelContainer/VBoxContainer/CenterContainer/VBoxContainer/VBoxContainer/PlayButton" method="_on_pressed"]

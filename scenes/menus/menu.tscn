@@ -314,7 +314,8 @@ script = ExtResource("2_8nkf3")
 [node name="GlobalEventPanel" parent="." instance=ExtResource("4_v8ik4")]
 layout_mode = 1
 offset_top = -44.24
-offset_bottom = -44.24
+offset_right = 81.0
+offset_bottom = 18.76
 metadata/_edit_group_ = true
 metadata/_edit_use_anchors_ = true
 
