@@ -18,15 +18,16 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GlobalSignal="*res://globals/global_signal.gd"
-GlobalVar="*res://globals/global_var.gd"
-GlobalDateTime="*res://globals/global_date_time.gd"
-GlobalCashflow="*res://globals/global_cashflow.gd"
-GlobalStat="*res://globals/global_stat.gd"
-GlobalJob="*res://globals/global_job.gd"
-GlobalModal="*res://globals/global_modal.gd"
-GlobalSave="*res://globals/global_save.gd"
-GlobalEvent="*res://globals/global_event.gd"
+GlobalSignal="*res://autoloaders/global_signal.gd"
+GlobalVar="*res://autoloaders/global_var.gd"
+GlobalDateTime="*res://autoloaders/global_date_time.gd"
+GlobalCashflow="*res://autoloaders/global_cashflow.gd"
+GlobalStat="*res://autoloaders/global_stat.gd"
+GlobalJob="*res://autoloaders/global_job.gd"
+GlobalModal="*res://autoloaders/global_modal.gd"
+GlobalSave="*res://autoloaders/global_save.gd"
+GlobalEvent="*res://autoloaders/global_event.gd"
+Profile="*res://autoloaders/profile.gd"
 
 [display]
 

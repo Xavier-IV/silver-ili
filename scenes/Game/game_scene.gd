@@ -44,8 +44,9 @@ func _on_click_2():
 func _on_timer_timeout():
 	if GlobalDateTime.is_paused():
 		return
-	GlobalSave.save()
+	Profile.continuous_learning()
 	GlobalDateTime.calendar_update()
+	GlobalSave.save()
 
 
 func _on_day_advanced():

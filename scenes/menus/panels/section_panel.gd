@@ -16,6 +16,14 @@ func _ready():
 		%Content.add_child(content_instance)
 
 
+func _set_content(_content: PackedScene):
+	if _content != null:
+		var content_instance = _content.instantiate()
+		content_instance.size_flags_vertical = 3
+		content_instance.size_flags_horizontal = 3
+		%Content.add_child(content_instance)
+
+
 func _on_close_button_pressed():
 	visible = false
 	var panelGroups = get_tree().get_nodes_in_group("PanelGroups")

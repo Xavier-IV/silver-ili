@@ -12,4 +12,4 @@ func _on_sig_notify(noti: GlobalSignal.Notification):
 
 	var event_arr = stat_events.values()
 	event_arr.sort_custom(func(a, b): return a.createdAt - b.createdAt > 0)
-	text = "\n".join(event_arr.slice(0, 3).map(func(e): return e.text))
+	text = "\n".join(event_arr.slice(0, 1).map(func(e): return e.text))

@@ -9,7 +9,6 @@ corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
 [node name="GlobalEventPanel" type="VBoxContainer"]
-visible = false
 modulate = Color(1, 1, 1, 0)
 z_index = 1
 anchors_preset = 15

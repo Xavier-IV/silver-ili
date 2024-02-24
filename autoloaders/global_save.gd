@@ -7,7 +7,6 @@ signal sig_loading_game
 
 
 func save():
-	print("Saving game...")
 	emit_signal("sig_saving_game")
 	var global_employment = {
 		"current": GlobalVar.current_job, "detail": GlobalVar.employment_detail
