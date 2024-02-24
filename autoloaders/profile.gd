@@ -14,12 +14,12 @@ var default = {
 var learned_technologies = {
 	"web":
 	{
-		"current_level": 0,
+		"current_level": 1,
 		"current_time_spent": 0,
 	},
 	"database":
 	{
-		"current_level": 0,
+		"current_level": 1,
 		"current_time_spent": 0,
 	}
 }

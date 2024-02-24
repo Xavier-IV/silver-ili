@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b1kbh2im8oybb"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f1ge5"]
+
+[resource]
+Button/styles/normal = SubResource("StyleBoxFlat_f1ge5")
+Label/font_sizes/font_size = 16
