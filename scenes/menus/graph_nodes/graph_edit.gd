@@ -118,6 +118,24 @@ func _ready():
 
 	for node in nodes.values():
 		var order = node.order
+		var graph_element = GraphElement.new()
+		var panel = Panel.new()
+		var style = StyleBoxFlat.new()
+		style.set_bg_color(Color(0.2, 0.2, 0.2, 0.8))
+		style.set_border_width_all(2)
+		style.set_border_color(Color(0.0, 0.0, 0.0, 1))
+		style.set_expand_margin_all(5)
+		style.set_corner_radius_all(10)
+		panel.add_theme_stylebox_override("panel", style)
+		var center_container = CenterContainer.new()
+		center_container.set_anchors_preset(Control.PRESET_FULL_RECT)
+		var panel_label = Label.new()
+		panel_label.text = "Locked"
+		panel_label.add_theme_color_override("font_outline_color", Color.BLACK)
+		panel_label.add_theme_constant_override("outline_size", 5)
+		center_container.add_child(panel_label)
+		panel.add_child(center_container)
+
 		var player_skill = Profile.get_skill_level(node.skills)
 
 		var skill_ready = player_skill >= node.skill_lvl_requirement
@@ -131,10 +149,11 @@ func _ready():
 			if skill_ready:
 				graph_node.title += " (Learned)"
 			else:
-				graph_node.title += " (Not Yet Learned)"
+				graph_node.title += " (Not Learned)"
 
 		graph_node.name = node.name
 		graph_node.custom_minimum_size = Vector2(300, 200)
+		panel.custom_minimum_size = Vector2(300, 200)
 		graph_node.draggable = false
 
 		for child_i in range(node.child_nodes.size()):
@@ -157,7 +176,11 @@ func _ready():
 			graph_node.add_child(label)
 
 		add_child(graph_node)
-		all_nodes.append({"name": node.name, "node": graph_node})
+		if node.skills != null && !skill_ready:
+			graph_element.add_child(panel)
+			add_child(graph_element)
+			graph_element.custom_minimum_size = graph_node.get_rect().size
+
 		node_paths[graph_node.name] = graph_node.get_path()
 		if last_node:
 			if order[0] == last_order[0] && order[1] != last_order[1]:
@@ -165,8 +188,16 @@ func _ready():
 					last_node.position_offset.x,
 					last_node.position_offset.y + (last_node.get_rect().size.y + GAP_Y)
 				)
+				graph_element.position_offset = Vector2(
+					last_node.position_offset.x,
+					last_node.position_offset.y + (last_node.get_rect().size.y + GAP_Y)
+				)
 			else:
 				graph_node.position_offset = Vector2(
+					last_node.position_offset.x - last_node.get_rect().size.x - GAP_X,
+					last_node.position_offset.y
+				)
+				graph_element.position_offset = Vector2(
 					last_node.position_offset.x - last_node.get_rect().size.x - GAP_X,
 					last_node.position_offset.y
 				)
@@ -176,11 +207,22 @@ func _ready():
 				viewport.position.x / 2 - graph_node.get_rect().size.x / 2,
 				viewport.position.y / 2 - graph_node.get_rect().size.y / 2
 			)
+			graph_element.position_offset = Vector2(
+				viewport.position.x / 2 - graph_node.get_rect().size.x / 2,
+				viewport.position.y / 2 - graph_node.get_rect().size.y / 2
+			)
 			last_node = graph_node
 
 		last_order = order
+		all_nodes.append({"name": node.name, "node": graph_node})
+
 	# zoom = 1.3
 	get_invalids()
+	var offset_x = all_nodes.map(func(x): return x["node"].get_rect().size.x).reduce(
+		func(x, y): return x + y
+	)
+	var offset_x_calc = offset_x * -1 / 2
+	set_scroll_offset(Vector2(offset_x_calc, 0))
 
 
 func _on_connection_request(from_node, from_port, to_node, to_port):
@@ -204,6 +246,8 @@ func _on_button_pressed():
 
 func recalculate_disconnect(from_node_name, to_node_name):
 	pass
+	completed_nodes[to_node_name] = completed_nodes.get(to_node_name, {})
+	completed_nodes[to_node_name][from_node_name] = -1
 
 
 func recalculate_validity():

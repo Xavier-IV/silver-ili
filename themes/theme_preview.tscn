@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b0rh46d0gebde"]
+
+[node name="ThemePreview" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="GraphEdit" type="GraphEdit" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 300)
+layout_mode = 2
+scroll_offset = Vector2(-424, 0)
+
+[node name="GraphNode" type="GraphNode" parent="HBoxContainer/VBoxContainer/GraphEdit"]
+layout_mode = 0
+offset_left = 91.0
+offset_top = 78.0
+offset_right = 246.0
+offset_bottom = 258.0
+mouse_filter = 1
+position_offset = Vector2(-333, 78)
+title = "Title"
+slot/0/left_enabled = false
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(1, 1, 1, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer/GraphEdit/GraphNode"]
+layout_mode = 2
+text = "Content 1"
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer/GraphEdit/GraphNode"]
+layout_mode = 2
+text = "Content 1"

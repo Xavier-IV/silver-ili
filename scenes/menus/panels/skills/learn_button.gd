@@ -1,4 +1,4 @@
-extends "res://scenes/common/game_button.gd"
+extends Button
 
 @export var skill_key: String
 

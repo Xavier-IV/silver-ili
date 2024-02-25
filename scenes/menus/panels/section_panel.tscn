@@ -1,10 +1,21 @@
-[gd_scene load_steps=9 format=3 uid="uid://b0n3tpjf4sbp"]
+[gd_scene load_steps=10 format=3 uid="uid://b0n3tpjf4sbp"]
 
-[ext_resource type="Theme" uid="uid://cbdqhutecvme1" path="res://popup_theme.tres" id="1_vd1ea"]
 [ext_resource type="Script" path="res://scenes/menus/panels/section_panel.gd" id="2_7m8pw"]
 [ext_resource type="PackedScene" uid="uid://c6p08s4x6uwo4" path="res://scenes/common/game_button.tscn" id="2_8wy2t"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a5pot"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x1fjv"]
+bg_color = Color(0.866667, 0.866667, 0.835294, 1)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.0862745, 0.584314, 0.666667, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jkeey"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -14,7 +25,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b6lmv"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcglt"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -25,7 +36,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xi0x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nt3ad"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -37,7 +48,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 corner_detail = 5
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yvekw"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qku8i"]
 content_margin_left = 10.0
 content_margin_top = 5.0
 content_margin_right = 10.0
@@ -58,6 +69,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="Theme" id="Theme_vuepf"]
+
 [node name="SectionPanel" type="PanelContainer"]
 z_index = 2
 y_sort_enabled = true
@@ -66,12 +79,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_vd1ea")
+theme_override_styles/panel = SubResource("StyleBoxFlat_x1fjv")
 script = ExtResource("2_7m8pw")
 section_name = "Sample Name"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
 [node name="ContentContainer" type="VBoxContainer" parent="MarginContainer"]
 unique_name_in_owner = true
@@ -84,15 +101,16 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0.270588, 0.576471, 0.654902, 1)
 text = "Sample Name"
 
 [node name="CloseButton" parent="MarginContainer/ContentContainer/HBoxContainer" instance=ExtResource("2_8wy2t")]
 layout_mode = 2
 size_flags_horizontal = 10
-theme_override_styles/normal = SubResource("StyleBoxFlat_a5pot")
-theme_override_styles/hover = SubResource("StyleBoxFlat_b6lmv")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_5xi0x")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yvekw")
+theme_override_styles/normal = SubResource("StyleBoxFlat_jkeey")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hcglt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nt3ad")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qku8i")
 theme_override_styles/focus = SubResource("StyleBoxFlat_672nq")
 text = "Close"
 _size = "nm"
@@ -106,6 +124,7 @@ theme_override_constants/separation = 20
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_vuepf")
 horizontal_scroll_mode = 3
 vertical_scroll_mode = 3
 

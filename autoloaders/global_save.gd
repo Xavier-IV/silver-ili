@@ -31,7 +31,8 @@ func save():
 			"global_cashflows": global_cashflows.duplicate(),
 			"global_stat": global_stat.duplicate(),
 			"global_buffer_stat": global_buffer_stat.duplicate(),
-			"global_event": global_event.duplicate()
+			"global_event": global_event.duplicate(),
+			"global_learning": Profile.learned_technologies.duplicate()
 		}
 	)
 
@@ -81,3 +82,6 @@ func load():
 
 		if node_data.has("global_buffer_stat"):
 			GlobalStat.buffer_stats = node_data["global_buffer_stat"]
+
+		if node_data.has("global_learning"):
+			Profile.learned_technologies = node_data["global_learning"]

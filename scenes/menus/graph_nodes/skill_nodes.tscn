@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://p4lccuyqiaah"]
 
-[ext_resource type="Theme" uid="uid://cbdqhutecvme1" path="res://popup_theme.tres" id="1_7vyvr"]
 [ext_resource type="Script" path="res://scenes/menus/graph_nodes/graph_edit.gd" id="1_n6fl1"]
+[ext_resource type="Theme" uid="uid://h72rhbi6mgsy" path="res://global_theme.tres" id="1_s3std"]
 
 [sub_resource type="Theme" id="Theme_12emu"]
 Label/font_sizes/font_size = 24
@@ -29,14 +29,14 @@ theme_override_constants/separation = 10
 [node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("1_7vyvr")
-theme_override_font_sizes/font_size = 25
 disabled = true
 text = "Start Project"
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme = ExtResource("1_s3std")
+theme_type_variation = &"LabelMd"
 text = "Not Valid"
 
 [node name="GraphEdit" type="GraphEdit" parent="VBoxContainer"]
@@ -44,6 +44,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_12emu")
+scroll_offset = Vector2(0, -10)
 right_disconnects = true
 zoom_min = 0.5
 zoom_max = 2.0

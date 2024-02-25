@@ -35,3 +35,7 @@ window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/dynamic_fonts/use_oversampling=true
+
+[gui]
+
+theme/custom="res://global_theme.tres"
